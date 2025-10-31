@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { useTheme } from "./Hooks/useTheme";
 import About from "./components/About";
 import Hero from "./components/Hero";
+import Skills from "./components/Skills";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
       </main>
     </div>
   );
