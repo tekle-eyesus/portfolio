@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import { useTheme } from "./Hooks/useTheme";
+import About from "./components/About";
 import Hero from "./components/Hero";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <About />
       </main>
     </div>
   );
