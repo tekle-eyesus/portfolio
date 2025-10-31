@@ -27,7 +27,7 @@ const Header = ({ theme, toggleTheme }) => {
       <div className='container'>
         <nav className='nav'>
           <a href='#home' className='logo'>
-            Tekleeyesus
+            Tekle M.
           </a>
 
           <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
