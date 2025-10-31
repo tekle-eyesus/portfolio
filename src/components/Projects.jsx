@@ -200,10 +200,11 @@ const Projects = () => {
 
         .project-links a {
           color: white;
-          font-size: 1.5rem;
-          padding: 0.5rem;
+          font-size: 1.2rem;
+          padding: 0.3rem;
           background: var(--accent);
-          border-radius: 50%;
+          color: var(--primary-bg);
+          border-radius: 20%;
           transition: transform 0.3s ease;
         }
 
