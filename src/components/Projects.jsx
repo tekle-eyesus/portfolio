@@ -46,7 +46,16 @@ const Projects = () => {
               )}
 
               <div className='project-image'>
-                <div className='image-placeholder'>
+                <img
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  className='project-screenshot'
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "flex";
+                  }}
+                />
+                <div className='image-fallback'>
                   <span>Project Screenshot</span>
                 </div>
                 <div className='project-overlay'>
@@ -164,7 +173,18 @@ const Projects = () => {
           overflow: hidden;
         }
 
-        .image-placeholder {
+        .project-screenshot {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-screenshot {
+          transform: scale(1.05);
+        }
+
+        .image-fallback {
           width: 100%;
           height: 100%;
           background: var(--secondary-bg);
@@ -262,6 +282,20 @@ const Projects = () => {
           .projects-filter {
             flex-direction: column;
             align-items: center;
+          }
+
+          .project-image {
+            height: 180px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .project-actions {
+            flex-direction: column;
+          }
+
+          .project-content {
+            padding: 1rem;
           }
         }
       `}</style>

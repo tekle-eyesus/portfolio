@@ -4,7 +4,7 @@ export const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-    image: "/images/ecommerce-project.jpg",
+    image: "/images/projects/ecommerce-platform.png",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
     githubUrl: "https://github.com/alexchen/ecommerce-platform",
     liveUrl: "https://ecommerce-demo.alexchen.dev",
@@ -15,7 +15,7 @@ export const projects = [
     title: "Task Management App",
     description:
       "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "/images/task-app.jpg",
+    image: "/images/projects/ecommerce-platform.png",
     technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
     githubUrl: "https://github.com/alexchen/task-manager",
     liveUrl: "https://tasks.alexchen.dev",
@@ -26,7 +26,7 @@ export const projects = [
     title: "Weather Dashboard",
     description:
       "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-    image: "/images/weather-app.jpg",
+    image: "/images/projects/ecommerce-platform.png",
     technologies: ["React", "Chart.js", "OpenWeather API", "Leaflet"],
     githubUrl: "https://github.com/alexchen/weather-dashboard",
     liveUrl: "https://weather.alexchen.dev",
@@ -37,7 +37,7 @@ export const projects = [
     title: "Social Media Analytics",
     description:
       "Analytics platform for social media metrics with data visualization, reporting, and insights generation.",
-    image: "/images/analytics-dashboard.jpg",
+    image: "/images/projects/sample-project-image.png",
     technologies: ["Python", "Django", "D3.js", "Celery", "Redis"],
     githubUrl: "https://github.com/alexchen/social-analytics",
     liveUrl: "https://analytics.alexchen.dev",
@@ -48,7 +48,7 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "A modern, responsive portfolio website with dark mode, smooth animations, and optimized performance.",
-    image: "/images/portfolio-project.jpg",
+    image: "/images/projects/sample-project-image.png",
     technologies: ["React", "CSS3", "Framer Motion", "Vercel"],
     githubUrl: "https://github.com/alexchen/portfolio",
     liveUrl: "https://alexchen.dev",
@@ -59,7 +59,7 @@ export const projects = [
     title: "AI Chat Application",
     description:
       "Real-time chat application with AI integration, message encryption, and multimedia support.",
-    image: "/images/chat-app.jpg",
+    image: "/images/projects/sample-project-image.png",
     technologies: ["React", "FastAPI", "WebSockets", "OpenAI API", "Docker"],
     githubUrl: "https://github.com/alexchen/ai-chat",
     liveUrl: "https://chat.alexchen.dev",
