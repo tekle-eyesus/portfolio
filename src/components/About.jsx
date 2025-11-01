@@ -7,9 +7,11 @@ const About = () => {
         <h2 className='section-title'>About Me</h2>
         <div className='about-content'>
           <div className='about-image'>
-            <div className='image-placeholder'>
-              <span>Professional Headshot</span>
-            </div>
+            <img
+              src='/images/profile_photo.png'
+              alt='Professional Headshot of Alex Chen'
+              className='profile-photo'
+            />
           </div>
           <div className='about-text'>
             <h3>Building Digital Solutions That Make a Difference</h3>
@@ -65,17 +67,19 @@ const About = () => {
           justify-content: center;
         }
 
-        .image-placeholder {
+        .profile-photo {
           width: 250px;
           height: 250px;
-          background: var(--secondary-bg);
-          border: 2px solid var(--border);
           border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--text-secondary);
-          font-style: italic;
+          object-fit: cover;
+          border: 3px solid var(--accent);
+          box-shadow: 0 10px 30px var(--shadow);
+          transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+          transform: scale(1.05);
+          box-shadow: 0 15px 40px var(--shadow);
         }
 
         .about-text h3 {
@@ -103,6 +107,11 @@ const About = () => {
           background: var(--card-bg);
           border-radius: 10px;
           border: 1px solid var(--border);
+          transition: transform 0.3s ease;
+        }
+
+        .highlight-item:hover {
+          transform: translateY(-5px);
         }
 
         .highlight-item strong {
@@ -130,6 +139,11 @@ const About = () => {
             text-align: center;
           }
 
+          .profile-photo {
+            width: 200px;
+            height: 200px;
+          }
+
           .about-highlights {
             grid-template-columns: 1fr;
             gap: 1rem;
@@ -144,6 +158,11 @@ const About = () => {
           .about-actions {
             flex-direction: column;
             align-items: center;
+          }
+
+          .profile-photo {
+            width: 180px;
+            height: 180px;
           }
         }
       `}</style>
