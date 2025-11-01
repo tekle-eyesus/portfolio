@@ -1,6 +1,26 @@
 import React from "react";
 
 const About = () => {
+  const resumeDriveLink =
+    "https://drive.google.com/file/d/1j5509OpNwS-1hdO7zbwvRETLqUESOFyn/view?usp=sharing";
+
+  const handleDirectDownload = () => {
+    const directDownloadLink = `https://drive.google.com/uc?export=download&id=${getFileIdFromLink(
+      resumeDriveLink
+    )}`;
+    const link = document.createElement("a");
+    link.href = directDownloadLink;
+    link.setAttribute("download", "Alex_Chen_Resume.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const getFileIdFromLink = (driveLink) => {
+    const match = driveLink.match(/\/file\/d\/([^\/]+)/);
+    return match ? match[1] : null;
+  };
+
   return (
     <section id='about' className='section'>
       <div className='container'>
@@ -46,7 +66,11 @@ const About = () => {
               <a href='#contact' className='btn'>
                 Hire Me
               </a>
-              <a href='/resume.pdf' className='btn btn-outline' download>
+              <a
+                className='btn btn-outline'
+                download
+                onClick={handleDirectDownload}
+              >
                 Download CV
               </a>
             </div>
