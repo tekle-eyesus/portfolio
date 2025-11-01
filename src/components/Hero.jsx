@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <div className='hero-visual'>
             <div className='code-animation'>
-              <div className='code-line'>function buildPortfolio() {"{"}</div>
+              <div className='code-line'>function myPortfolio() {"{"}</div>
               <div className='code-line'>
                 &nbsp;&nbsp;return {"<"}
                 <span className='code-tag'>AwesomeProjects</span>
