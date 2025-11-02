@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -6,30 +6,21 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhone,
+  FaPaperPlane,
+  FaCheck,
+  FaExclamationTriangle,
 } from "react-icons/fa";
+import { useContactForm } from "../Hooks/useContactForm";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // to be Handled form submission latter
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! I will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+  const {
+    formData,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+    submitStatus,
+    submitMessage,
+  } = useContactForm();
 
   return (
     <section id='contact' className='section'>
@@ -57,7 +48,7 @@ const Contact = () => {
                 <FaMapMarkerAlt />
                 <div>
                   <strong>Location</strong>
-                  <span>Addis Ababa, Ethiopia</span>
+                  <span>Addis Abeba, Ethiopia</span>
                 </div>
               </div>
 
@@ -65,7 +56,7 @@ const Contact = () => {
                 <FaPhone />
                 <div>
                   <strong>Phone</strong>
-                  <span>+251 (930) 48-2206</span>
+                  <span>+251 (930) 482-206</span>
                 </div>
               </div>
             </div>
@@ -94,6 +85,18 @@ const Contact = () => {
 
           <div className='contact-form'>
             <form onSubmit={handleSubmit}>
+              {/* Status Message */}
+              {submitStatus && (
+                <div className={`status-message ${submitStatus}`}>
+                  {submitStatus === "success" ? (
+                    <FaCheck />
+                  ) : (
+                    <FaExclamationTriangle />
+                  )}
+                  <span>{submitMessage}</span>
+                </div>
+              )}
+
               <div className='form-group'>
                 <input
                   type='text'
@@ -102,6 +105,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -113,6 +117,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -124,6 +129,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -135,11 +141,28 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
 
-              <button type='submit' className='btn btn-full'>
-                Send Message
+              <button
+                type='submit'
+                className={`btn btn-full submit-btn ${
+                  isSubmitting ? "submitting" : ""
+                }`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className='loading-spinner'></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -182,6 +205,11 @@ const Contact = () => {
           background: var(--card-bg);
           border-radius: 10px;
           border: 1px solid var(--border);
+          transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+          transform: translateX(5px);
         }
 
         .contact-item svg {
@@ -229,6 +257,29 @@ const Contact = () => {
           box-shadow: 0 10px 30px var(--shadow);
         }
 
+        .status-message {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 1rem;
+          border-radius: 10px;
+          margin-bottom: 1.5rem;
+          font-weight: 500;
+          animation: slideIn 0.3s ease;
+        }
+
+        .status-message.success {
+          background: rgba(46, 204, 113, 0.1);
+          color: #27ae60;
+          border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .status-message.error {
+          background: rgba(231, 76, 60, 0.1);
+          color: #c0392b;
+          border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+
         .form-group {
           margin-bottom: 1.5rem;
         }
@@ -252,6 +303,12 @@ const Contact = () => {
           box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
 
+        .form-group input:disabled,
+        .form-group textarea:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
         .form-group textarea {
           resize: vertical;
           min-height: 120px;
@@ -259,6 +316,49 @@ const Contact = () => {
 
         .btn-full {
           width: 100%;
+        }
+
+        .submit-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .submit-btn.submitting {
+          opacity: 0.8;
+          cursor: not-allowed;
+        }
+
+        .loading-spinner {
+          width: 18px;
+          height: 18px;
+          border: 2px solid transparent;
+          border-top: 2px solid currentColor;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
 
         @media (max-width: 968px) {
@@ -279,6 +379,15 @@ const Contact = () => {
         @media (max-width: 480px) {
           .contact-form {
             padding: 1.5rem;
+          }
+
+          .contact-item {
+            padding: 0.75rem;
+          }
+
+          .form-group input,
+          .form-group textarea {
+            padding: 0.75rem;
           }
         }
       `}</style>
