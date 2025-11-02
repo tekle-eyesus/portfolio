@@ -54,7 +54,7 @@ const ChatMessage = ({ message, showTyping = false }) => {
       <div className='message-content-wrapper'>
         <div className='message-header'>
           <span className='sender-name'>
-            {message.isUser ? "You" : "Eve AI"}
+            {message.isUser ? "You" : "Even AI"}
           </span>
           <div className='message-status'>
             <FaClock className='time-icon' />

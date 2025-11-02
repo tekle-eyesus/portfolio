@@ -29,10 +29,10 @@ Tekle's Featured Projects:
 4. AI Chat Application - Real-time chat with AI integration
 
 Contact Information:
-- Email: Tekle@example.com
-- Location: San Francisco, CA
-- GitHub: github.com/Tekl
-- LinkedIn: linkedin.com/in/Tekle
+- Email: tekleeyesus21@gmail.com
+- Location: Addis Ababa, Ethiopia
+- GitHub: github.com/Tekle-eyesus
+- LinkedIn: linkedin.com/in/Tekleeyesus-munye/
 
 Upcoming Features (Mention when relevant):
 - Schedule appointments with Tekle
@@ -48,4 +48,4 @@ Response Style:
 - Always offer to help with next steps`;
 
 export const INITIAL_MESSAGE =
-  "Hello! I'm **Even AI**, Tekle's personal assistant. I'm here to help you learn about Tekle's skills and projects, and soon I'll be able to schedule appointments with him! How can I assist you today?";
+  "Hello! I'm Even AI, Tekle's personal assistant. I'm here to help you learn about Tekle's skills and projects, and soon I'll be able to schedule appointments with him! How can I assist you today?";

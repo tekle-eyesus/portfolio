@@ -52,8 +52,8 @@ const AIChatBot = () => {
                   <FaRobot />
                 </div>
                 <div className='title-content'>
-                  <h3>Eve AI</h3>
-                  <span className='subtitle'>Alex Chen's Assistant</span>
+                  <h3>Even AI</h3>
+                  <span className='subtitle'>Tekle's Assistant</span>
                   <span className='status'>
                     {isLoading ? (
                       <span className='status-dot thinking'></span>
@@ -90,7 +90,7 @@ const AIChatBot = () => {
                 <ChatMessage
                   message={{
                     id: "thinking",
-                    text: "Eve AI is thinking...",
+                    text: "Even AI is thinking...",
                     isUser: false,
                     timestamp: new Date(),
                   }}
@@ -198,7 +198,7 @@ const AIChatBot = () => {
         }
 
         .title-content h3 {
-          margin: 0 0 0.25rem 0;
+          margin: 0 0 0.15rem 0;
           font-size: 1.3rem;
           color: var(--text-primary);
           font-weight: 600;
@@ -316,7 +316,7 @@ const AIChatBot = () => {
           }
 
           .chat-header {
-            padding: 1.25rem;
+            padding: 0.6rem;
           }
 
           .chat-messages {

@@ -34,9 +34,9 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
   };
 
   const quickQuestions = [
-    "What are Alex's skills?",
+    "What are Tekle's skills?",
     "Tell me about his projects",
-    "How to contact Alex?",
+    "How to contact Tekle?",
     "Schedule a meeting",
   ];
 
@@ -69,7 +69,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder='Message Eve AI...'
+              placeholder='Message Even AI...'
               disabled={isLoading}
               rows='1'
               className='chat-textarea'
@@ -104,7 +104,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
         {/* AI Badge */}
         <div className='ai-badge'>
           <FaRobot className='ai-icon' />
-          <span>Eve AI · Alex's Assistant</span>
+          <span>Even AI · Tekle's Assistant</span>
         </div>
       </form>
 
@@ -116,7 +116,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
             var(--primary-bg) 0%,
             var(--secondary-bg) 100%
           );
-          padding: 1rem 1.5rem 1.5rem;
+          padding: 0.5rem 1rem 1rem;
         }
 
         .quick-questions {
@@ -140,7 +140,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
 
         .quick-question-btn:hover:not(:disabled) {
           background: var(--accent);
-          color: white;
+          color: var(--primary-bg);
           border-color: var(--accent);
           transform: translateY(-1px);
         }
@@ -302,7 +302,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
 
         @media (max-width: 768px) {
           .chat-input-container {
-            padding: 1rem;
+            padding: 0.7rem;
           }
 
           .input-wrapper {
@@ -321,7 +321,7 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
 
         @media (max-width: 480px) {
           .chat-input-container {
-            padding: 0.75rem;
+            padding: 0.56rem;
           }
 
           .input-content {
