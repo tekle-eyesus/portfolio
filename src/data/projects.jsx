@@ -1,68 +1,171 @@
-export const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-    image: "/images/projects/ecommerce-platform.png",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-    githubUrl: "https://github.com/alexchen/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.alexchen.dev",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "/images/projects/ecommerce-platform.png",
-    technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
-    githubUrl: "https://github.com/alexchen/task-manager",
-    liveUrl: "https://tasks.alexchen.dev",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description:
-      "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-    image: "/images/projects/ecommerce-platform.png",
-    technologies: ["React", "Chart.js", "OpenWeather API", "Leaflet"],
-    githubUrl: "https://github.com/alexchen/weather-dashboard",
-    liveUrl: "https://weather.alexchen.dev",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Social Media Analytics",
-    description:
-      "Analytics platform for social media metrics with data visualization, reporting, and insights generation.",
-    image: "/images/projects/sample-project-image.png",
-    technologies: ["Python", "Django", "D3.js", "Celery", "Redis"],
-    githubUrl: "https://github.com/alexchen/social-analytics",
-    liveUrl: "https://analytics.alexchen.dev",
-    featured: true,
-  },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    description:
-      "A modern, responsive portfolio website with dark mode, smooth animations, and optimized performance.",
-    image: "/images/projects/sample-project-image.png",
-    technologies: ["React", "CSS3", "Framer Motion", "Vercel"],
-    githubUrl: "https://github.com/alexchen/portfolio",
-    liveUrl: "https://alexchen.dev",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "AI Chat Application",
-    description:
-      "Real-time chat application with AI integration, message encryption, and multimedia support.",
-    image: "/images/projects/sample-project-image.png",
-    technologies: ["React", "FastAPI", "WebSockets", "OpenAI API", "Docker"],
-    githubUrl: "https://github.com/alexchen/ai-chat",
-    liveUrl: "https://chat.alexchen.dev",
-    featured: true,
-  },
-];
+export const projects = {
+  all: [
+    {
+      id: 1,
+      title: 'E-Commerce Platform',
+      description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'JWT'],
+      githubUrl: 'https://github.com/alexchen/ecommerce-platform',
+      liveUrl: 'https://ecommerce-demo.alexchen.dev',
+      featured: true,
+      category: 'web'
+    },
+    {
+      id: 2,
+      title: 'Task Management App',
+      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['React', 'Socket.io', 'Express', 'PostgreSQL'],
+      githubUrl: 'https://github.com/alexchen/task-manager',
+      liveUrl: 'https://tasks.alexchen.dev',
+      featured: true,
+      category: 'web'
+    },
+    {
+      id: 3,
+      title: 'Fitness Tracker Mobile App',
+      description: 'Cross-platform fitness tracking app with workout plans, progress tracking, and social features.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+      githubUrl: 'https://github.com/alexchen/fitness-tracker',
+      liveUrl: 'https://apps.apple.com/fitness-tracker',
+      featured: true,
+      category: 'mobile'
+    },
+    {
+      id: 4,
+      title: 'Food Delivery App',
+      description: 'Mobile app for food delivery with real-time order tracking, payment integration, and restaurant management.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
+      githubUrl: 'https://github.com/alexchen/food-delivery',
+      liveUrl: 'https://play.google.com/food-delivery',
+      featured: false,
+      category: 'mobile'
+    },
+    {
+      id: 5,
+      title: 'Banking App UI/UX',
+      description: 'Modern banking application interface with intuitive navigation, transaction history, and financial insights.',
+      image: '/images/projects/ecommerce-platform.png',
+      technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
+      githubUrl: null,
+      liveUrl: 'https://dribbble.com/alexchen/banking-app',
+      featured: true,
+      category: 'uiux'
+    },
+    {
+      id: 6,
+      title: 'E-Learning Platform Design',
+      description: 'Complete UI/UX design for an online learning platform with course management and interactive features.',
+      image: '/images/projects/ecommerce-platform.png',
+      technologies: ['Sketch', 'InVision', 'User Testing', 'Wireframing'],
+      githubUrl: null,
+      liveUrl: 'https://dribbble.com/alexchen/elearning-platform',
+      featured: false,
+      category: 'uiux'
+    },
+    {
+      id: 7,
+      title: 'Brand Identity Package',
+      description: 'Complete brand identity design including logo, typography, color palette, and brand guidelines.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['Adobe Illustrator', 'Photoshop', 'Brand Strategy'],
+      githubUrl: null,
+      liveUrl: 'https://behance.net/alexchen/brand-identity',
+      featured: true,
+      category: 'graphic'
+    },
+    {
+      id: 8,
+      title: 'Marketing Campaign Graphics',
+      description: 'Series of marketing materials including social media graphics, banners, and promotional materials.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['Photoshop', 'Illustrator', 'Canva'],
+      githubUrl: null,
+      liveUrl: 'https://behance.net/alexchen/marketing-campaign',
+      featured: false,
+      category: 'graphic'
+    },
+    {
+      id: 9,
+      title: 'Product Launch Video',
+      description: 'Corporate video for product launch including motion graphics, sound design, and professional editing.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'],
+      githubUrl: null,
+      liveUrl: 'https://vimeo.com/alexchen/product-launch',
+      featured: true,
+      category: 'video'
+    },
+    {
+      id: 10,
+      title: 'Explainer Animation',
+      description: 'Animated explainer video for tech startup with character animation and dynamic transitions.',
+      image: '/images/projects/ecommerce-platform.jpg',
+      technologies: ['After Effects', 'Character Animator', 'Audition'],
+      githubUrl: null,
+      liveUrl: 'https://youtube.com/alexchen/explainer-video',
+      featured: false,
+      category: 'video'
+    }
+  ],
+  
+  categories: [
+    {
+      id: 'all',
+      name: 'All Projects',
+      icon: '📁',
+      count: 10
+    },
+    {
+      id: 'featured',
+      name: 'Featured',
+      icon: '⭐',
+      count: 6
+    },
+    {
+      id: 'web',
+      name: 'Web Development',
+      icon: '🌐',
+      count: 2
+    },
+    {
+      id: 'mobile',
+      name: 'Mobile Apps',
+      icon: '📱',
+      count: 2
+    },
+    {
+      id: 'uiux',
+      name: 'UI/UX Design',
+      icon: '🎨',
+      count: 2
+    },
+    {
+      id: 'graphic',
+      name: 'Graphic Design',
+      icon: '✏️',
+      count: 2
+    },
+    {
+      id: 'video',
+      name: 'Video Editing',
+      icon: '🎬',
+      count: 2
+    }
+  ]
+};
+
+// Helper function to get projects by category
+export const getProjectsByCategory = (category) => {
+  if (category === 'all') return projects.all;
+  if (category === 'featured') return projects.all.filter(project => project.featured);
+  return projects.all.filter(project => project.category === category);
+};
+
+// Update category counts
+projects.categories.forEach(cat => {
+  cat.count = getProjectsByCategory(cat.id).length;
+});
