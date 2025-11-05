@@ -4,7 +4,7 @@ export const projects = {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-      image: '/images/projects/ecommerce-platform.jpg',
+       image: '/images/projects/ecommerce-platform.png',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'JWT'],
       githubUrl: 'https://github.com/alexchen/ecommerce-platform',
       liveUrl: 'https://ecommerce-demo.alexchen.dev',
@@ -15,7 +15,7 @@ export const projects = {
       id: 2,
       title: 'Task Management App',
       description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/images/projects/ecommerce-platform.jpg',
+      image: '/images/projects/ecommerce-platform.png',
       technologies: ['React', 'Socket.io', 'Express', 'PostgreSQL'],
       githubUrl: 'https://github.com/alexchen/task-manager',
       liveUrl: 'https://tasks.alexchen.dev',
@@ -26,7 +26,7 @@ export const projects = {
       id: 3,
       title: 'Fitness Tracker Mobile App',
       description: 'Cross-platform fitness tracking app with workout plans, progress tracking, and social features.',
-      image: '/images/projects/ecommerce-platform.jpg',
+       image: '/images/projects/ecommerce-platform.png',
       technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
       githubUrl: 'https://github.com/alexchen/fitness-tracker',
       liveUrl: 'https://apps.apple.com/fitness-tracker',
@@ -37,7 +37,7 @@ export const projects = {
       id: 4,
       title: 'Food Delivery App',
       description: 'Mobile app for food delivery with real-time order tracking, payment integration, and restaurant management.',
-      image: '/images/projects/ecommerce-platform.jpg',
+      image: '/images/projects/ecommerce-platform.png',
       technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
       githubUrl: 'https://github.com/alexchen/food-delivery',
       liveUrl: 'https://play.google.com/food-delivery',
@@ -48,7 +48,7 @@ export const projects = {
       id: 5,
       title: 'Banking App UI/UX',
       description: 'Modern banking application interface with intuitive navigation, transaction history, and financial insights.',
-      image: '/images/projects/ecommerce-platform.png',
+   image: '/images/projects/ecommerce-platform.png',
       technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
       githubUrl: null,
       liveUrl: 'https://dribbble.com/alexchen/banking-app',
@@ -70,7 +70,7 @@ export const projects = {
       id: 7,
       title: 'Brand Identity Package',
       description: 'Complete brand identity design including logo, typography, color palette, and brand guidelines.',
-      image: '/images/projects/ecommerce-platform.jpg',
+       image: '/images/projects/ecommerce-platform.png',
       technologies: ['Adobe Illustrator', 'Photoshop', 'Brand Strategy'],
       githubUrl: null,
       liveUrl: 'https://behance.net/alexchen/brand-identity',
@@ -81,7 +81,7 @@ export const projects = {
       id: 8,
       title: 'Marketing Campaign Graphics',
       description: 'Series of marketing materials including social media graphics, banners, and promotional materials.',
-      image: '/images/projects/ecommerce-platform.jpg',
+       image: '/images/projects/ecommerce-platform.png',
       technologies: ['Photoshop', 'Illustrator', 'Canva'],
       githubUrl: null,
       liveUrl: 'https://behance.net/alexchen/marketing-campaign',
@@ -92,7 +92,7 @@ export const projects = {
       id: 9,
       title: 'Product Launch Video',
       description: 'Corporate video for product launch including motion graphics, sound design, and professional editing.',
-      image: '/images/projects/ecommerce-platform.jpg',
+       image: '/images/projects/ecommerce-platform.png',
       technologies: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'],
       githubUrl: null,
       liveUrl: 'https://vimeo.com/alexchen/product-launch',
@@ -103,7 +103,7 @@ export const projects = {
       id: 10,
       title: 'Explainer Animation',
       description: 'Animated explainer video for tech startup with character animation and dynamic transitions.',
-      image: '/images/projects/ecommerce-platform.jpg',
+    image: '/images/projects/ecommerce-platform.png',
       technologies: ['After Effects', 'Character Animator', 'Audition'],
       githubUrl: null,
       liveUrl: 'https://youtube.com/alexchen/explainer-video',
@@ -116,49 +116,42 @@ export const projects = {
     {
       id: 'all',
       name: 'All Projects',
-      icon: '📁',
       count: 10
     },
     {
       id: 'featured',
       name: 'Featured',
-      icon: '⭐',
       count: 6
     },
     {
       id: 'web',
       name: 'Web Development',
-      icon: '🌐',
       count: 2
     },
     {
       id: 'mobile',
       name: 'Mobile Apps',
-      icon: '📱',
       count: 2
     },
     {
       id: 'uiux',
       name: 'UI/UX Design',
-      icon: '🎨',
       count: 2
     },
     {
       id: 'graphic',
       name: 'Graphic Design',
-      icon: '✏️',
       count: 2
     },
     {
       id: 'video',
       name: 'Video Editing',
-      icon: '🎬',
       count: 2
     }
   ]
 };
 
-// Helper function to get projects by category
+
 export const getProjectsByCategory = (category) => {
   if (category === 'all') return projects.all;
   if (category === 'featured') return projects.all.filter(project => project.featured);
