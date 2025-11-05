@@ -188,7 +188,7 @@ const AIChatBot = () => {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: linear-gradient(135deg, var(--accent), #3742fa);
+          background:  #3a5d9bff;
           color: white;
           display: flex;
           align-items: center;
