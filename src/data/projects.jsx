@@ -71,7 +71,7 @@ export const projects = {
       id: 7,
       title: 'Brand Identity Package',
       description: 'Complete brand identity design including logo, typography, color palette, and brand guidelines.',
-       image: '/images/projects/ecommerce-platform.png',
+       image: '/images/projects/brand-design.png',
       technologies: ['Adobe Illustrator', 'Photoshop', 'Brand Strategy'],
       githubUrl: null,
       liveUrl: 'https://behance.net/alexchen/brand-identity',
