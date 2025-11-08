@@ -24,25 +24,26 @@ export const projects = {
     },
     {
       id: 3,
-      title: 'Fitness Tracker Mobile App',
-      description: 'Cross-platform fitness tracking app with workout plans, progress tracking, and social features.',
-       image: '/images/projects/ecommerce-platform.png',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-      githubUrl: 'https://github.com/alexchen/fitness-tracker',
-      liveUrl: 'https://apps.apple.com/fitness-tracker',
+      title: 'FindBet - House Rental App',
+      description: "Picture FindBet as your home-hunting buddy,Whether buying or renting is on your agenda, we bring the neighborhood to life with our app.",
+      image: '/images/projects/sample-project-image.png',
+      technologies: ['Flutter', 'Supabase', 'Google Maps API'],
+      githubUrl: 'https://github.com/alexchen/food-delivery',
+      liveUrl: 'https://play.google.com/food-delivery',
       featured: true,
       category: 'mobile'
     },
     {
       id: 4,
-      title: 'Food Delivery App',
-      description: 'Mobile app for food delivery with real-time order tracking, payment integration, and restaurant management.',
-      image: '/images/projects/ecommerce-platform.png',
-      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
-      githubUrl: 'https://github.com/alexchen/food-delivery',
-      liveUrl: 'https://play.google.com/food-delivery',
-      featured: false,
+       title: 'FarmWise AI',
+      description: 'FarmWise AI is a mobile app that leverages CNNs for real-time crop disease detection and integrates an AI-powered farm assistant.',
+       image: '/images/projects/farmwise-ai-app.png',
+      technologies: ['Flutter', 'CNN', 'ML', 'tfLite'],
+      githubUrl: 'https://github.com/alexchen/fitness-tracker',
+      liveUrl: 'https://apps.apple.com/fitness-tracker',
+      featured: true,
       category: 'mobile'
+
     },
     {
       id: 5,
@@ -109,7 +110,29 @@ export const projects = {
       liveUrl: 'https://youtube.com/alexchen/explainer-video',
       featured: false,
       category: 'video'
-    }
+    },
+       {
+      id: 11,
+      title: 'Socialize - Social App',
+      description: 'A minimalisic social app for tech professionals to share their ideas and connect with each other.',
+      image: '/images/projects/social-app.png',
+      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
+      githubUrl: 'https://github.com/alexchen/food-delivery',
+      liveUrl: 'https://play.google.com/food-delivery',
+      featured: false,
+      category: 'mobile'
+    },
+     {
+      id: 12,
+      title: 'ChatAI - Chatbot App',
+      description: 'A Chatbot app that helps users with their queries and questions with gemini ai.',
+      image: '/images/projects/chatbot-app.png',
+      technologies: ['Flutter', 'Gemini API Key'],
+      githubUrl: 'https://github.com/alexchen/food-delivery',
+      liveUrl: 'https://play.google.com/food-delivery',
+      featured: false,
+      category: 'mobile'
+    },
   ],
   
   categories: [

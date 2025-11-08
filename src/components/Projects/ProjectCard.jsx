@@ -198,9 +198,9 @@ const ProjectCard = ({ project, category }) => {
 
         .project-link {
           color: var(--primary-bg);
-          font-size: 1.2rem;
-          width: 50px;
-          height: 50px;
+          font-size: 0.8rem;
+          width: 30px;
+          height: 30px;
           display: flex;
           align-items: center;
           justify-content: center;
