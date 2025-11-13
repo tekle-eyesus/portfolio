@@ -49,10 +49,10 @@ export const projects = {
       id: 5,
       title: 'Banking App UI/UX',
       description: 'Modern banking application interface with intuitive navigation, transaction history, and financial insights.',
-   image: '/images/projects/ecommerce-platform.png',
+      image: "/images/projects/ui_design.png",
       technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
       githubUrl: null,
-      liveUrl: 'https://dribbble.com/alexchen/banking-app',
+      liveUrl: 'https://www.figma.com/design/7UeQqvYCTHWj1Xt4CH9jNt/Untitled?node-id=0-1&t=QyD7bENqRbEqJstA-1',
       featured: true,
       category: 'uiux'
     },
