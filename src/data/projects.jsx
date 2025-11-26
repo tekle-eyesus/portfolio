@@ -58,9 +58,9 @@ export const projects = {
     },
     {
       id: 6,
-      title: 'E-Learning Platform Design',
-      description: 'Complete UI/UX design for an online learning platform with course management and interactive features.',
-      image: '/images/projects/ecommerce-platform.png',
+      title: 'AI Ad-Creation Platform Hero Design',
+      description: 'A Figma hero concept for an AI tool that generates ad creatives instantly.',
+      image: './images/projects/generate-ads.png',
       technologies: ['Sketch', 'InVision', 'User Testing', 'Wireframing'],
       githubUrl: null,
       liveUrl: 'https://dribbble.com/alexchen/elearning-platform',
