@@ -60,7 +60,7 @@ export const projects = {
       id: 6,
       title: 'AI Ad-Creation Platform Hero Design',
       description: 'A Figma hero concept for an AI tool that generates ad creatives instantly.',
-      image: './images/projects/generate-ads.png',
+      image: './images/projects/generate ads.png',
       technologies: ['Sketch', 'InVision', 'User Testing', 'Wireframing'],
       githubUrl: null,
       liveUrl: 'https://dribbble.com/alexchen/elearning-platform',
