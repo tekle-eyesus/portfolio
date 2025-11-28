@@ -40,7 +40,7 @@ export const projects = {
        image: '/images/projects/farmwise-ai-app.png',
       technologies: ['Flutter', 'CNN', 'ML', 'tfLite'],
       githubUrl: 'https://github.com/alexchen/fitness-tracker',
-      liveUrl: 'https://apps.apple.com/fitness-tracker',
+      liveUrl: 'https://drive.google.com/file/d/1Ut-_-OvgfzaCil9GPgiHdvPgDesbeoH0/view?usp=sharing',
       featured: true,
       category: 'mobile'
 

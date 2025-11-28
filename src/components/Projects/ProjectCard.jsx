@@ -52,12 +52,12 @@ const ProjectCard = ({ project, category }) => {
         <div className="project-overlay">
           <div className="project-links">
             {project.githubUrl && (
-              <a href={project.githubUrl} aria-label="GitHub Repository" className="project-link">
+              <a href={project.githubUrl} aria-label="GitHub Repository" className="project-link" target="_blank">
                 <FaGithub />
               </a>
             )}
             {project.liveUrl && (
-              <a href={project.liveUrl} aria-label="Live Demo" className="project-link">
+              <a href={project.liveUrl} aria-label="Live Demo" className="project-link" target="_blank">
                 <FaExternalLinkAlt />
               </a>
             )}
@@ -77,12 +77,12 @@ const ProjectCard = ({ project, category }) => {
 
         <div className="project-actions">
           {project.liveUrl && (
-            <a href={project.liveUrl} className="btn btn-small btn-view">
+            <a href={project.liveUrl} className="btn btn-small btn-view" target="_blank">
               View Project
             </a>
           )}
           {project.githubUrl && (
-            <a href={project.githubUrl} className="btn btn-small btn-code">
+            <a href={project.githubUrl} className="btn btn-small btn-code" target="_blank">
               Source Code
             </a>
           )}

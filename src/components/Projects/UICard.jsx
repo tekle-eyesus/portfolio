@@ -25,7 +25,7 @@ const UICard = ({ project }) => {
             <a href={project.liveUrl} aria-label="View on Behance" className="project-link">
               <FaBehance />
             </a>
-            <a href={project.liveUrl} aria-label="View Case Study" className="project-link">
+            <a href={project.liveUrl} target="_blank" aria-label="View Case Study" className="project-link" >
               <FaExternalLinkAlt />
             </a>
           </div>
