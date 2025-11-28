@@ -82,7 +82,7 @@ export const projects = {
       id: 8,
       title: 'Marketing Campaign Graphics',
       description: 'Series of marketing materials including social media graphics, banners, and promotional materials.',
-       image: '/images/projects/ecommerce-platform.png',
+       image: '/images/projects/ZenCafe-poster.png',
       technologies: ['Photoshop', 'Illustrator', 'Canva'],
       githubUrl: null,
       liveUrl: 'https://behance.net/alexchen/marketing-campaign',
