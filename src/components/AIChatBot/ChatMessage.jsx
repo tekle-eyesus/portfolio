@@ -1,282 +1,160 @@
 import React, { useState, useEffect } from "react";
-import { FaUser, FaRobot, FaCheck, FaClock } from "react-icons/fa";
+import { FaRobot, FaThumbsUp, FaThumbsDown, FaCar } from "react-icons/fa";
 
 const ChatMessage = ({ message, showTyping = false }) => {
   const [displayedText, setDisplayedText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+  
+  // Simple typing effect
   useEffect(() => {
-    if (!showTyping || message.isUser) {
+    if (!showTyping || message.isUser || message.isThinking) {
       setDisplayedText(message.text);
       return;
     }
-
-    if (currentIndex < message.text.length) {
-      const timer = setTimeout(() => {
-        setDisplayedText((prev) => prev + message.text[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, 20);
-
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, message.text, message.isUser, showTyping]);
-
-  useEffect(() => {
+    
+    // Reset if message changes
     setDisplayedText("");
-    setCurrentIndex(0);
-  }, [message.text]);
+    
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedText((prev) => message.text.slice(0, i + 1));
+      i++;
+      if (i > message.text.length) clearInterval(interval);
+    }, 15); // Fast typing
 
-  const formatTime = (timestamp) => {
-    return timestamp.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
+    return () => clearInterval(interval);
+  }, [message.text, showTyping, message.isUser]);
 
   return (
-    <div
-      className={`chat-message ${
-        message.isUser ? "user-message" : "ai-message"
-      }`}
-    >
-      <div className='message-avatar'>
-        {message.isUser ? (
-          <div className='user-avatar'>
-            <FaUser />
+    <div className={`message-row ${message.isUser ? "user-row" : "bot-row"}`}>
+      
+      {/* Bot Avatar (Only for Bot) */}
+      {!message.isUser && (
+        <div className="avatar-container">
+          <div className="bot-icon">
+            {/* <FaRobot /> */}
+
+            <img src="/images/bot_logo.png" alt="" className="bot-icon"/>
           </div>
-        ) : (
-          <div className='ai-avatar'>
-            <FaRobot />
+        </div>
+      )}
+
+      <div className="message-content-stack">
+        {/* The Message Bubble/Text */}
+        <div className={`bubble ${message.isUser ? "user-bubble" : "bot-bubble"}`}>
+          {message.isThinking ? (
+             <div className="typing-dots">
+               <span>.</span><span>.</span><span>.</span>
+             </div>
+          ) : (
+             <p>{displayedText}</p>
+          )}
+        </div>
+
+        {/* Feedback Icons (Only for Bot & Not Thinking) */}
+        {!message.isUser && !message.isThinking && (
+          <div className="feedback-actions">
+            <button aria-label="Helpful"><FaThumbsUp /></button>
+            <button aria-label="Not helpful"><FaThumbsDown /></button>
           </div>
         )}
       </div>
 
-      <div className='message-content-wrapper'>
-        <div className='message-header'>
-          <span className='sender-name'>
-            {message.isUser ? "You" : "Even AI"}
-          </span>
-          <div className='message-status'>
-            <FaClock className='time-icon' />
-            <span className='message-time'>
-              {formatTime(message.timestamp)}
-            </span>
-            {!message.isUser && !showTyping && (
-              <FaCheck className='check-icon' />
-            )}
-          </div>
-        </div>
-
-        <div className='message-bubble'>
-          <div className='message-text'>
-            {displayedText}
-            {showTyping && currentIndex < message.text.length && (
-              <span className='typing-cursor'>|</span>
-            )}
-          </div>
-        </div>
-      </div>
-
       <style jsx>{`
-        .chat-message {
+        .message-row {
           display: flex;
-          gap: 0.75rem;
-          margin-bottom: 1.5rem;
-          animation: fadeInUp 0.4s ease;
+          gap: 1rem;
+          width: 100%;
         }
 
-        .user-message {
-          flex-direction: row-reverse;
+        /* ALIGNMENT FIX: Justify Content */
+        .user-row {
+          justify-content: flex-end;
         }
 
-        .message-avatar {
+        .bot-row {
+          justify-content: flex-start;
+        }
+
+        .avatar-container {
           flex-shrink: 0;
+          margin-top: 4px;
         }
 
-        .user-avatar,
-        .ai-avatar {
-          width: 40px;
-          height: 40px;
+        .bot-icon {
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
+          background: #4F46E5; /* Indigo */
+          color: white;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 0.9rem;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .user-avatar {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-        }
-
-        .ai-avatar {
-          background: linear-gradient(135deg, var(--accent), #3742fa);
-          color: white;
-        }
-
-        .message-content-wrapper {
-          flex: 1;
-          max-width: 70%;
-        }
-
-        .user-message .message-content-wrapper {
+        .message-content-stack {
           display: flex;
           flex-direction: column;
-          align-items: flex-end;
-        }
-
-        .message-header {
-          display: flex;
-          justify-content: between;
-          align-items: center;
-          margin-bottom: 0.5rem;
+          max-width: 80%;
           gap: 0.5rem;
         }
 
-        .user-message .message-header {
-          flex-direction: row-reverse;
-        }
-
-        .sender-name {
-          font-weight: 600;
-          font-size: 0.85rem;
-          color: var(--text-primary);
-        }
-
-        .message-status {
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
-          color: var(--text-secondary);
-          font-size: 0.75rem;
-        }
-
-        .time-icon,
-        .check-icon {
-          font-size: 0.7rem;
-        }
-
-        .check-icon {
-          color: #00d2d3;
-        }
-
-        .message-bubble {
-          background: var(--card-bg);
-          border: 1px solid var(--border);
-          border-radius: 18px;
-          padding: 0.875rem 1.125rem;
-          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-          position: relative;
-          backdrop-filter: blur(10px);
-        }
-
-        .user-message .message-bubble {
-          background: linear-gradient(135deg, var(--accent), #3742fa);
-          color: white;
-          border: none;
-          border-bottom-right-radius: 6px;
-        }
-
-        .ai-message .message-bubble {
-          border-bottom-left-radius: 6px;
-          background: rgba(255, 255, 255, 0.05);
-        }
-
-        .message-bubble::before {
-          content: "";
-          position: absolute;
-          bottom: -1px;
-          width: 12px;
-          height: 12px;
-          background: inherit;
-          border: inherit;
-        }
-
-        .ai-message .message-bubble::before {
-          left: -6px;
-          border-bottom-right-radius: 8px;
-          border-top: none;
-          border-right: none;
-        }
-
-        .user-message .message-bubble::before {
-          right: -6px;
-          border-bottom-left-radius: 8px;
-          border-top: none;
-          border-left: none;
-        }
-
-        .message-text {
+        .bubble {
+          padding: 0.75rem 1rem;
+          border-radius: 12px;
+          font-size: 0.95rem;
           line-height: 1.5;
           word-wrap: break-word;
-          white-space: pre-wrap;
-          font-size: 0.95rem;
         }
 
-        .typing-cursor {
-          animation: blink 1s infinite;
-          color: var(--accent);
-          font-weight: bold;
-          margin-left: 2px;
+        /* User Style: Gray Bubble, Right Aligned */
+        .user-bubble {
+          background: var(--user-bubble-bg);
+          color: var(--user-text);
+          border-bottom-right-radius: 2px;
         }
 
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(15px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        /* Bot Style: No Background, Left Aligned */
+        .bot-bubble {
+          background: transparent;
+          color: var(--bot-text);
+          padding-left: 0;
+          padding-top: 0;
         }
+
+        .feedback-actions {
+          display: flex;
+          gap: 0.75rem;
+          padding-left: 0;
+        }
+
+        .feedback-actions button {
+          background: none;
+          border: none;
+          color: var(--chat-text-secondary);
+          cursor: pointer;
+          font-size: 0.9rem;
+          opacity: 0.6;
+          transition: opacity 0.2s, color 0.2s;
+        }
+
+        .feedback-actions button:hover {
+          opacity: 1;
+          color: var(--chat-text);
+        }
+
+        .typing-dots span {
+          animation: blink 1.4s infinite both;
+          font-size: 1.5rem;
+          margin: 0 1px;
+        }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
 
         @keyframes blink {
-          0%,
-          50% {
-            opacity: 1;
-          }
-          51%,
-          100% {
-            opacity: 0;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .message-content-wrapper {
-            max-width: 85%;
-          }
-
-          .user-avatar,
-          .ai-avatar {
-            width: 36px;
-            height: 36px;
-            font-size: 0.8rem;
-          }
-
-          .message-bubble {
-            padding: 0.75rem 1rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .message-content-wrapper {
-            max-width: 90%;
-          }
-
-          .chat-message {
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-          }
-
-          .message-bubble {
-            padding: 0.625rem 0.875rem;
-          }
-
-          .message-text {
-            font-size: 0.9rem;
-          }
+          0% { opacity: 0.2; }
+          20% { opacity: 1; }
+          100% { opacity: 0.2; }
         }
       `}</style>
     </div>

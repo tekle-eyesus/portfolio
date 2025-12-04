@@ -1,16 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaPaperPlane, FaTrash, FaMagic, FaRobot } from "react-icons/fa";
+import { FaArrowRight, FaTrash } from "react-icons/fa";
 
-const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
+const ChatInput = ({ onSendMessage, onClear, isLoading }) => {
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
 
-  // Auto-resize textarea
+  // Auto-resize
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height =
-        textareaRef.current.scrollHeight + "px";
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
     }
   }, [message]);
 
@@ -19,329 +18,145 @@ const ChatInput = ({ onSendMessage, onClearChat, isLoading }) => {
     if (message.trim() && !isLoading) {
       onSendMessage(message.trim());
       setMessage("");
-      // Reset textarea height
-      if (textareaRef.current) {
-        textareaRef.current.style.height = "auto";
-      }
+      if (textareaRef.current) textareaRef.current.style.height = "auto";
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSubmit(e);
     }
   };
 
-  const quickQuestions = [
-    "What are Tekle's skills?",
-    "Tell me about his projects",
-    "How to contact Tekle?",
-    "Schedule a meeting",
-  ];
-
-  const handleQuickQuestion = (question) => {
-    onSendMessage(question);
-  };
-
   return (
-    <div className='chat-input-container'>
-      {/* Quick Questions */}
-      <div className='quick-questions'>
-        {quickQuestions.map((question, index) => (
-          <button
-            key={index}
-            onClick={() => handleQuickQuestion(question)}
-            disabled={isLoading}
-            className='quick-question-btn'
-          >
-            {question}
-          </button>
-        ))}
-      </div>
-
-      {/* Input Form */}
-      <form onSubmit={handleSubmit} className='chat-input-form'>
-        <div className='input-wrapper'>
-          <div className='input-content'>
-            <textarea
-              ref={textareaRef}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder='Message Even AI...'
-              disabled={isLoading}
-              rows='1'
-              className='chat-textarea'
-            />
-            <div className='input-actions'>
-              <button
-                type='button'
-                onClick={onClearChat}
-                className='action-button clear'
-                aria-label='Clear conversation'
-                title='Clear conversation'
-                disabled={isLoading}
-              >
-                <FaTrash />
-              </button>
-              <button
-                type='submit'
-                disabled={!message.trim() || isLoading}
-                className='action-button send'
-                aria-label='Send message'
-              >
-                {isLoading ? (
-                  <div className='loading-spinner'></div>
-                ) : (
-                  <FaPaperPlane />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* AI Badge */}
-        <div className='ai-badge'>
-          <FaRobot className='ai-icon' />
-          <span>Even AI · Tekle's Assistant</span>
-        </div>
+    <div className="input-container">
+      
+      {/* The Pill Input Box */}
+      <form onSubmit={handleSubmit} className="input-box-wrapper">
+        <textarea
+          ref={textareaRef}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Ask a question..."
+          rows={1}
+          className="chat-textarea"
+          disabled={isLoading}
+        />
+        
+        <button 
+          type="submit" 
+          className="send-btn" 
+          disabled={!message.trim() || isLoading}
+        >
+          <FaArrowRight />
+        </button>
       </form>
 
+      {/* Clear Chat (Optional, hidden in a small text button below or keep inside) */}
+      <div className="footer-links">
+        {message.length > 0 && (
+            <button onClick={onClear} className="clear-link" type="button">Clear history</button>
+        )}
+      </div>
+
+      <div className="disclaimer">
+        Building Scalable Solutions & Innovative Tech.
+      </div>
+
       <style jsx>{`
-        .chat-input-container {
-          border-top: 1px solid var(--border);
-          background: linear-gradient(
-            135deg,
-            var(--primary-bg) 0%,
-            var(--secondary-bg) 100%
-          );
-          padding: 0.5rem 1rem 1rem;
+        .input-container {
+          padding: 1rem 1.25rem 1.25rem;
+          background: var(--chat-bg);
+          border-top: 1px solid var(--chat-border);
         }
 
-        .quick-questions {
+        .input-box-wrapper {
           display: flex;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
-          flex-wrap: wrap;
+          align-items: center;
+          background: var(--chat-bg);
+          border: 2px solid var(--chat-border);
+          border-radius: 24px; /* Pill Shape */
+          padding: 0.5rem 0.75rem 0.5rem 1rem;
+          transition: border-color 0.2s, box-shadow 0.2s;
+          position: relative;
         }
 
-        .quick-question-btn {
-          background: rgba(0, 0, 0, 0.05);
-          border: 1px solid var(--border);
-          color: var(--text-secondary);
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
-          font-size: 0.8rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          white-space: nowrap;
-        }
-
-        .quick-question-btn:hover:not(:disabled) {
-          background: var(--accent);
-          color: var(--primary-bg);
-          border-color: var(--accent);
-          transform: translateY(-1px);
-        }
-
-        .quick-question-btn:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        .chat-input-form {
-          width: 100%;
-        }
-
-        .input-wrapper {
-          background: var(--card-bg);
-          border: 2px solid var(--border);
-          border-radius: 20px;
-          padding: 0.75rem;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(10px);
-        }
-
-        .input-wrapper:focus-within {
-          border-color: var(--accent);
-          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15),
-            0 0 0 4px rgba(0, 0, 0, 0.05);
-          transform: translateY(-2px);
-        }
-
-        .input-content {
-          display: flex;
-          align-items: flex-end;
-          gap: 0.75rem;
+        .input-box-wrapper:focus-within {
+          border-color: var(--accent-color);
+          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
         }
 
         .chat-textarea {
           flex: 1;
           border: none;
           background: transparent;
-          color: var(--text-primary);
-          font-family: "Open Sans", sans-serif;
-          font-size: 0.95rem;
           resize: none;
+          font-family: inherit;
+          font-size: 0.95rem;
+          color: var(--chat-text);
           outline: none;
-          min-height: 24px;
-          max-height: 120px;
-          line-height: 1.5;
-          padding: 0.25rem 0;
+          max-height: 100px;
+          padding: 4px 0;
+          line-height: 1.4;
         }
 
         .chat-textarea::placeholder {
-          color: var(--text-secondary);
-          opacity: 0.7;
+          color: var(--chat-text-secondary);
         }
 
-        .chat-textarea:disabled {
-          opacity: 0.6;
-        }
-
-        .input-actions {
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-        }
-
-        .action-button {
-          background: none;
+        .send-btn {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: var(--accent-color);
+          color: var(--chat-bg); /* Inverted text color */
           border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
-          padding: 0.6rem;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          overflow: hidden;
+          margin-left: 0.5rem;
+          transition: transform 0.2s, opacity 0.2s;
+          flex-shrink: 0;
         }
 
-        .action-button::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-          );
-          transition: left 0.5s;
+        .send-btn:disabled {
+          opacity: 0.3;
+          cursor: default;
+          background: var(--chat-text-secondary);
         }
 
-        .action-button:hover::before {
-          left: 100%;
+        .send-btn:not(:disabled):hover {
+          transform: scale(1.05);
         }
 
-        .action-button.clear {
-          color: var(--text-secondary);
-        }
-
-        .action-button.clear:hover:not(:disabled) {
-          color: #ff4757;
-          background: rgba(255, 71, 87, 0.1);
-          transform: scale(1.1);
-        }
-
-        .action-button.send {
-          background: linear-gradient(135deg, var(--accent), #3742fa);
-          color: white;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .action-button.send:hover:not(:disabled) {
-          transform: translateY(-2px) scale(1.05);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .action-button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-          transform: none !important;
-        }
-
-        .loading-spinner {
-          width: 16px;
-          height: 16px;
-          border: 2px solid transparent;
-          border-top: 2px solid white;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-
-        .ai-badge {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
+        .disclaimer {
           margin-top: 0.75rem;
-          color: var(--text-secondary);
-          font-size: 0.8rem;
-          justify-content: center;
+          font-size: 0.75rem;
+          color: var(--chat-text-secondary);
+          text-align: center;
         }
 
-        .ai-icon {
-          color: var(--accent);
+        .disclaimer a {
+          color: #4F46E5;
+          text-decoration: none;
         }
 
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
+        .footer-links {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 4px;
         }
-
-        @media (max-width: 768px) {
-          .chat-input-container {
-            padding: 0.7rem;
-          }
-
-          .input-wrapper {
-            padding: 0.6rem;
-          }
-
-          .quick-questions {
-            gap: 0.25rem;
-          }
-
-          .quick-question-btn {
-            padding: 0.4rem 0.8rem;
-            font-size: 0.75rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .chat-input-container {
-            padding: 0.56rem;
-          }
-
-          .input-content {
-            flex-direction: column;
-            gap: 0.5rem;
-          }
-
-          .input-actions {
-            width: 100%;
-            justify-content: space-between;
-          }
-
-          .quick-questions {
-            flex-direction: column;
-          }
-
-          .quick-question-btn {
-            text-align: left;
-            white-space: normal;
-          }
+        
+        .clear-link {
+            background: none;
+            border: none;
+            font-size: 0.7rem;
+            color: var(--chat-text-secondary);
+            cursor: pointer;
+            text-decoration: underline;
         }
       `}</style>
     </div>
