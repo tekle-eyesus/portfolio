@@ -17,7 +17,7 @@ class GeminiService {
 
     this.genAI = new GoogleGenerativeAI(apiKey);
     this.model = this.genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash-lite",
       systemInstruction: SYSTEM_PROMPT,
       generationConfig: {
         temperature: 0.7,
@@ -37,13 +37,13 @@ class GeminiService {
         history: [
           {
             role: "user",
-            parts: [{ text: "Hello, please introduce yourself as Alex Chen." }],
+            parts: [{ text: "Hello, please introduce yourself as tekleeyesus." }],
           },
           {
             role: "model",
             parts: [
               {
-                text: "Hello! I'm Alex Chen, a software engineer passionate about building amazing digital experiences. I specialize in modern web technologies like React, Node.js, and Python. How can I help you learn more about my skills and projects today?",
+                text: "Hello! I'm tekleeyesus, a software engineer passionate about building amazing digital experiences. I specialize in modern web technologies like React, Node.js, and Python. How can I help you learn more about my skills and projects today?",
               },
             ],
           },

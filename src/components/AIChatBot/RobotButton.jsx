@@ -9,7 +9,7 @@ const RobotButton = ({ isOpen, onClick, isThinking }) => {
       aria-label="Toggle Chat"
     >
       <div className="icon-wrapper">
-        {isOpen ? <FaTimes /> : <FaRobot />}
+        {isOpen ? <FaTimes /> :      <img src="/images/bot_logo.png" alt="" className="bot-icon"/>}
       </div>
       
       {/* Thinking Indicator Badge */}
@@ -20,6 +20,20 @@ const RobotButton = ({ isOpen, onClick, isThinking }) => {
       )}
 
       <style jsx>{`
+
+        .bot-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: #4F46E5; /* Indigo */
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.9rem;
+        }
+
+
         .trigger-button {
           width: 56px;
           height: 56px;
