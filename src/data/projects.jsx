@@ -71,10 +71,21 @@ export const projects = {
       id: 7,
       title: 'Brand Identity Package',
       description: 'Complete brand identity design including logo, typography, color palette, and brand guidelines.',
-       image: '/images/projects/brand-design.png',
+       image: '/images/projects/poster card for fastDinner.png',
       technologies: ['Adobe Illustrator', 'Photoshop', 'Brand Strategy'],
       githubUrl: null,
-      liveUrl: 'https://behance.net/alexchen/brand-identity',
+      liveUrl: 'https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
+      featured: true,
+      category: 'graphic'
+    },
+     {
+      id: 13,
+      title: 'Visit Ethiopia Graphic',
+      description: 'Welcome to Ethiopia, the Land of Origins! Ethiopia invites you to discover why it is the origin of so much!',
+       image: '/images/projects/poster card for fastDinner (1).png',
+      technologies: ['Canva', 'Brand Strategy'],
+      githubUrl: null,
+      liveUrl: 'https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
       featured: true,
       category: 'graphic'
     },
