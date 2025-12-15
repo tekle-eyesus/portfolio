@@ -138,7 +138,7 @@ export const projects = {
       title: "Connect Guard",
       description: 'A lightweight, robust Flutter widget that simplifies handling offline/online network states.',
       image: '/images/projects/flutter-package.jpg',
-      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
+      technologies: ['Flutter', 'rxdart', 'connectivity+'],
       githubUrl: 'https://github.com/tekle-eyesus/connect_guard',
       liveUrl: 'https://pub.dev/packages/connect_guard',
       featured: true,
