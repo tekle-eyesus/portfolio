@@ -36,8 +36,9 @@ Featured Projects:
 
 Contact Links:
 - Email: tekleeyesus21@gmail.com
-- GitHub: github.com/Tekle-eyesus
-- LinkedIn: linkedin.com/in/Tekleeyesus-munye/
+- GitHub: https://github.com/Tekle-eyesus
+- LinkedIn: https://www.linkedin.com/in/Tekleeyesus-munye/
+- Twitter URL: https://x.com/TekleeyesusM
 
 Upcoming Features:
 - Appointment scheduling, Calendar availability checks, Automated booking.
