@@ -133,6 +133,17 @@ export const projects = {
       featured: false,
       category: 'mobile'
     },
+       {
+      id: 14,
+      title: "Connect Guard",
+      description: 'A lightweight, robust Flutter widget that simplifies handling offline/online network states.',
+      image: '/images/projects/flutter-package.jpg',
+      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
+      githubUrl: 'https://github.com/tekle-eyesus/connect_guard',
+      liveUrl: 'https://pub.dev/packages/connect_guard',
+      featured: true,
+      category: 'mobile'
+    },
      {
       id: 12,
       title: 'ChatAI - Chatbot App',
