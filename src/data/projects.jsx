@@ -12,6 +12,17 @@ export const projects = {
       category: 'web'
     },
     {
+      id: 15,
+      title: 'Budget Tracker',
+      description: 'A modern, fully asynchronous Telegram Bot built with Python to track personal finances, visualize spending habits, and export professional reports.',
+       image: 'images/projects/budget_tracker.png',
+      technologies: ['Python', 'aiogram', 'SQLAlchemy'],
+      githubUrl: 'https://github.com/tekle-eyesus/tele-budget-tracker',
+      liveUrl: 'https://drive.google.com/file/d/1s4y7uzBVnOjpfS1ly82_G_kn0-XYTeWd/view?usp=sharing',
+      featured: true,
+      category: 'web'
+    },
+    {
       id: 2,
       title: 'Task Management App',
       description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
