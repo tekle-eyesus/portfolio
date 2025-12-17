@@ -188,7 +188,7 @@ const ProjectCard = ({ project, category }) => {
         }
 
         .project-card:hover .project-overlay {
-          opacity: 1;
+          opacity: 0.7;
         }
 
         .project-links {
