@@ -55,6 +55,17 @@ export const projects = {
       featured: true,
       category: 'web'
     },
+      {
+      id: 18,
+      title: 'FormSense AI',
+      description: "A full-stack AI application that uses YOLOv8 Pose Estimation and WebSockets to provide instant feedback on exercise form directly in the browser.",
+      image: '/images/projects/formsense_img.png',
+      technologies: ['React', 'FastAPI', 'YOLOv8', 'Python', 'Tailwind'],
+      githubUrl: 'https://github.com/tekle-eyesus/FormSense-AI',
+      liveUrl: 'https://github.com/tekle-eyesus/FormSense-AI',
+      featured: true,
+      category: 'web'
+    },
     {
       id: 3,
       title: 'FindBet - House Rental App',
