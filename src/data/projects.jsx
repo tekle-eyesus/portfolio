@@ -66,6 +66,17 @@ export const projects = {
       featured: true,
       category: 'web'
     },
+     {
+      id: 19,
+      title: 'RAG Indexer',
+      description: "A full-stack RAG application leveraging Google Gemini API, FastAPI, and ChromaDB to enable interactive chat with PDF documents.",
+      image: '/images/projects/rag.png',
+      technologies: ['FastAPI', 'Streamlit', 'Google Gemini', 'LangChain', 'ChromaDB'],
+      githubUrl: 'https://github.com/tekle-eyesus/rag-indexer',
+      liveUrl: 'https://github.com/tekle-eyesus/rag-indexer',
+      featured: true,
+      category: 'web'
+    },
     {
       id: 3,
       title: 'FindBet - House Rental App',
