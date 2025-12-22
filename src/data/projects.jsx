@@ -24,12 +24,12 @@ export const projects = {
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/images/projects/ecommerce-platform.png',
-      technologies: ['React', 'Socket.io', 'Express', 'PostgreSQL'],
-      githubUrl: 'https://github.com/alexchen/task-manager',
-      liveUrl: 'https://tasks.alexchen.dev',
+      title: 'A Video Connection Platform',
+      description: 'Silent Gaze is a video connection platform that enables users to connect through video rooms for real-time communication.',
+      image: '/images/projects/silentgaze_img.png',
+      technologies: ['Vite', 'Socket.io', 'Express', 'Node.js', 'mongodb'],
+      githubUrl: 'https://github.com/tekle-eyesus/silent-gaze',
+      liveUrl: 'https://silent-gaze.vercel.app/',
       featured: true,
       category: 'web'
     },
