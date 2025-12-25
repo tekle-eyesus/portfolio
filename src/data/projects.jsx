@@ -2,12 +2,12 @@ export const projects = {
   all: [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-       image: '/images/projects/ecommerce-platform.png',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'JWT'],
-      githubUrl: 'https://github.com/alexchen/ecommerce-platform',
-      liveUrl: 'https://ecommerce-demo.alexchen.dev',
+      title: 'AI Tech Blogging Platform API',
+      description: 'A comprehensive blogging platform API built with Node.js and Express, featuring user authentication, posts, threaded comments and replies, likes, and intelligent tech hub integration.',
+       image: '/images/projects/even_platformimg.png',
+      technologies: ['React', 'Node.js', 'MongoDB', 'MVP', 'JWT'],
+      githubUrl: 'https://github.com/tekle-eyesus/even-platform',
+      liveUrl: 'https://documenter.getpostman.com/view/37569986/2sBXVZpEmL',
       featured: true,
       category: 'web'
     },
