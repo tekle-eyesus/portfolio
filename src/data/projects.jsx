@@ -2,263 +2,304 @@ export const projects = {
   all: [
     {
       id: 1,
-      title: 'AI Tech Blogging Platform API',
-      description: 'A comprehensive blogging platform API built with Node.js and Express, featuring user authentication, posts, threaded comments and replies, likes, and intelligent tech hub integration.',
-       image: '/images/projects/even_platformimg.png',
-      technologies: ['React', 'Node.js', 'MongoDB', 'MVP', 'JWT'],
-      githubUrl: 'https://github.com/tekle-eyesus/even-platform',
-      liveUrl: 'https://documenter.getpostman.com/view/37569986/2sBXVZpEmL',
+      title: "AI Tech Blogging Platform API",
+      description:
+        "A comprehensive blogging platform API built with Node.js and Express, featuring user authentication, posts, threaded comments and replies, likes, and intelligent tech hub integration.",
+      image: "/images/projects/even_platformimg.png",
+      technologies: ["React", "Node.js", "MongoDB", "MVP", "JWT"],
+      githubUrl: "https://github.com/tekle-eyesus/even-platform",
+      liveUrl: "https://documenter.getpostman.com/view/37569986/2sBXVZpEmL",
       featured: true,
-      category: 'web'
+      category: "web",
     },
     {
       id: 15,
-      title: 'Budget Tracker',
-      description: 'A modern, fully asynchronous Telegram Bot built with Python to track personal finances, visualize spending habits, and export professional reports.',
-       image: 'images/projects/expensebot_img.png',
-      technologies: ['Python', 'aiogram', 'SQLAlchemy'],
-      githubUrl: 'https://github.com/tekle-eyesus/tele-budget-tracker',
-      liveUrl: 'https://drive.google.com/file/d/1s4y7uzBVnOjpfS1ly82_G_kn0-XYTeWd/view?usp=sharing',
+      title: "Budget Tracker",
+      description:
+        "A modern, fully asynchronous Telegram Bot built with Python to track personal finances, visualize spending habits, and export professional reports.",
+      image: "images/projects/expensebot_img.png",
+      technologies: ["Python", "aiogram", "SQLAlchemy"],
+      githubUrl: "https://github.com/tekle-eyesus/tele-budget-tracker",
+      liveUrl:
+        "https://drive.google.com/file/d/1s4y7uzBVnOjpfS1ly82_G_kn0-XYTeWd/view?usp=sharing",
       featured: true,
-      category: 'web'
+      category: "web",
     },
     {
       id: 2,
-      title: 'A Video Connection Platform',
-      description: 'Silent Gaze is a video connection platform that enables users to connect through video rooms for real-time communication.',
-      image: '/images/projects/silentgaze_img.png',
-      technologies: ['Vite', 'Socket.io', 'Express', 'Node.js', 'mongodb'],
-      githubUrl: 'https://github.com/tekle-eyesus/silent-gaze',
-      liveUrl: 'https://silent-gaze.vercel.app/',
+      title: "A Video Connection Platform",
+      description:
+        "Silent Gaze is a video connection platform that enables users to connect through video rooms for real-time communication.",
+      image: "/images/projects/silentgaze_img.png",
+      technologies: ["Vite", "Socket.io", "Express", "Node.js", "mongodb"],
+      githubUrl: "https://github.com/tekle-eyesus/silent-gaze",
+      liveUrl: "https://silent-gaze.vercel.app/",
       featured: true,
-      category: 'web'
+      category: "web",
     },
-     {
+    {
       id: 16,
-      title: 'SaaS billing API',
-      description: 'SaaS billing API is a production-ready backend engine designed for scalable subscription management.',
-      image: '/images/projects/saas_billing_api_img.png',
-      technologies: ['Python', 'Django 5', 'Docker', 'Chapa', "OpenAPI"],
-      githubUrl: 'https://github.com/tekle-eyesus/django-saas-billing',
-      liveUrl: 'https://github.com/tekle-eyesus/django-saas-billing',
+      title: "SaaS billing API",
+      description:
+        "SaaS billing API is a production-ready backend engine designed for scalable subscription management.",
+      image: "/images/projects/saas_billing_api_img.png",
+      technologies: ["Python", "Django 5", "Docker", "Chapa", "OpenAPI"],
+      githubUrl: "https://github.com/tekle-eyesus/django-saas-billing",
+      liveUrl: "https://github.com/tekle-eyesus/django-saas-billing",
       featured: true,
-      category: 'web'
+      category: "web",
     },
-     {
+    {
       id: 17,
-      title: 'DropKey Bot',
-      description: "DropKey Bot redefines privacy on Telegram. We believe sharing information shouldn't require exposing your personal identity (username or phone number).",
-      image: '/images/projects/dropkeybot_img.png',
-      technologies: ['Python', 'Aiogram', 'PostgreSQL', 'BCrypt ', "BCrypt"],
-      githubUrl: 'https://github.com/tekle-eyesus/dropkey-bot',
-      liveUrl: 'https://t.me/TekleDropKeyBot',
+      title: "DropKey Bot",
+      description:
+        "DropKey Bot redefines privacy on Telegram. We believe sharing information shouldn't require exposing your personal identity (username or phone number).",
+      image: "/images/projects/dropkeybot_img.png",
+      technologies: ["Python", "Aiogram", "PostgreSQL", "BCrypt ", "BCrypt"],
+      githubUrl: "https://github.com/tekle-eyesus/dropkey-bot",
+      liveUrl: "https://t.me/TekleDropKeyBot",
       featured: true,
-      category: 'web'
+      category: "web",
     },
-      {
+    {
       id: 18,
-      title: 'FormSense AI',
-      description: "A full-stack AI application that uses YOLOv8 Pose Estimation and WebSockets to provide instant feedback on exercise form directly in the browser.",
-      image: '/images/projects/formsense_img.png',
-      technologies: ['React', 'FastAPI', 'YOLOv8', 'Python', 'Tailwind'],
-      githubUrl: 'https://github.com/tekle-eyesus/FormSense-AI',
-      liveUrl: 'https://github.com/tekle-eyesus/FormSense-AI',
+      title: "FormSense AI",
+      description:
+        "A full-stack AI application that uses YOLOv8 Pose Estimation and WebSockets to provide instant feedback on exercise form directly in the browser.",
+      image: "/images/projects/formsense_img.png",
+      technologies: ["React", "FastAPI", "YOLOv8", "Python", "Tailwind"],
+      githubUrl: "https://github.com/tekle-eyesus/FormSense-AI",
+      liveUrl: "https://github.com/tekle-eyesus/FormSense-AI",
       featured: true,
-      category: 'web'
+      category: "web",
     },
-     {
+    {
       id: 19,
-      title: 'RAG Indexer',
-      description: "A full-stack RAG application leveraging Google Gemini API, FastAPI, and ChromaDB to enable interactive chat with PDF documents.",
-      image: '/images/projects/rag.png',
-      technologies: ['FastAPI', 'Streamlit', 'Google Gemini', 'LangChain', 'ChromaDB'],
-      githubUrl: 'https://github.com/tekle-eyesus/rag-indexer',
-      liveUrl: 'https://github.com/tekle-eyesus/rag-indexer',
+      title: "RAG Indexer",
+      description:
+        "A full-stack RAG application leveraging Google Gemini API, FastAPI, and ChromaDB to enable interactive chat with PDF documents.",
+      image: "/images/projects/rag.png",
+      technologies: [
+        "FastAPI",
+        "Streamlit",
+        "Google Gemini",
+        "LangChain",
+        "ChromaDB",
+      ],
+      githubUrl: "https://github.com/tekle-eyesus/rag-indexer",
+      liveUrl: "https://github.com/tekle-eyesus/rag-indexer",
       featured: true,
-      category: 'web'
+      category: "web",
+    },
+    {
+      id: 20,
+      title: "Insurance Broker Management System",
+      description:
+        "Insurance Broker Management System tailored for the Ethiopian market. Streamline client management, policy tracking, and claims processing with ease.",
+      image: "/images/projects/ethio-broker-web-img.png",
+      technologies: ["Node js", "React", "Express", "MongoDB", "JWT"],
+      githubUrl: "https://github.com/tekle-eyesus/ethio-broker-web",
+      liveUrl: "https://ethio-broker-web.vercel.app/",
+      featured: false,
+      category: "web",
     },
     {
       id: 3,
-      title: 'FindBet - House Rental App',
-      description: "Picture FindBet as your home-hunting buddy,Whether buying or renting is on your agenda, we bring the neighborhood to life with our app.",
-      image: '/images/projects/sample-project-image.png',
-      technologies: ['Flutter', 'Supabase', 'Google Maps API'],
-      githubUrl: 'https://github.com/alexchen/food-delivery',
-      liveUrl: 'https://play.google.com/food-delivery',
+      title: "FindBet - House Rental App",
+      description:
+        "Picture FindBet as your home-hunting buddy,Whether buying or renting is on your agenda, we bring the neighborhood to life with our app.",
+      image: "/images/projects/sample-project-image.png",
+      technologies: ["Flutter", "Supabase", "Google Maps API"],
+      githubUrl: "https://github.com/alexchen/food-delivery",
+      liveUrl: "https://play.google.com/food-delivery",
       featured: true,
-      category: 'mobile'
+      category: "mobile",
     },
     {
       id: 4,
-       title: 'FarmWise AI',
-      description: 'FarmWise AI is a mobile app that leverages CNNs for real-time crop disease detection and integrates an AI-powered farm assistant.',
-       image: '/images/projects/farmwise-ai-app.png',
-      technologies: ['Flutter', 'CNN', 'ML', 'tfLite'],
-      githubUrl: 'https://github.com/alexchen/fitness-tracker',
-      liveUrl: 'https://drive.google.com/file/d/1Ut-_-OvgfzaCil9GPgiHdvPgDesbeoH0/view?usp=sharing',
+      title: "FarmWise AI",
+      description:
+        "FarmWise AI is a mobile app that leverages CNNs for real-time crop disease detection and integrates an AI-powered farm assistant.",
+      image: "/images/projects/farmwise-ai-app.png",
+      technologies: ["Flutter", "CNN", "ML", "tfLite"],
+      githubUrl: "https://github.com/alexchen/fitness-tracker",
+      liveUrl:
+        "https://drive.google.com/file/d/1Ut-_-OvgfzaCil9GPgiHdvPgDesbeoH0/view?usp=sharing",
       featured: true,
-      category: 'mobile'
-
+      category: "mobile",
     },
     {
       id: 5,
-      title: 'Banking App UI/UX',
-      description: 'Modern banking application interface with intuitive navigation, transaction history, and financial insights.',
+      title: "Banking App UI/UX",
+      description:
+        "Modern banking application interface with intuitive navigation, transaction history, and financial insights.",
       image: "/images/projects/ui_design.png",
-      technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
+      technologies: ["Figma", "Adobe XD", "Prototyping", "User Research"],
       githubUrl: null,
-      liveUrl: 'https://www.figma.com/design/7UeQqvYCTHWj1Xt4CH9jNt/Untitled?node-id=0-1&t=QyD7bENqRbEqJstA-1',
+      liveUrl:
+        "https://www.figma.com/design/7UeQqvYCTHWj1Xt4CH9jNt/Untitled?node-id=0-1&t=QyD7bENqRbEqJstA-1",
       featured: true,
-      category: 'uiux'
+      category: "uiux",
     },
     {
       id: 6,
-      title: 'AI Ad-Creation Platform Hero Design',
-      description: 'A Figma hero concept for an AI tool that generates ad creatives instantly.',
-      image: './images/projects/generate ads.png',
-      technologies: ['Sketch', 'InVision', 'User Testing', 'Wireframing'],
+      title: "AI Ad-Creation Platform Hero Design",
+      description:
+        "A Figma hero concept for an AI tool that generates ad creatives instantly.",
+      image: "./images/projects/generate ads.png",
+      technologies: ["Sketch", "InVision", "User Testing", "Wireframing"],
       githubUrl: null,
-      liveUrl: 'https://dribbble.com/alexchen/elearning-platform',
+      liveUrl: "https://dribbble.com/alexchen/elearning-platform",
       featured: false,
-      category: 'uiux'
+      category: "uiux",
     },
     {
       id: 7,
-      title: 'Brand Identity Package',
-      description: 'Complete brand identity design including logo, typography, color palette, and brand guidelines.',
-       image: '/images/projects/poster card for fastDinner.png',
-      technologies: ['Adobe Illustrator', 'Photoshop', 'Brand Strategy'],
+      title: "Brand Identity Package",
+      description:
+        "Complete brand identity design including logo, typography, color palette, and brand guidelines.",
+      image: "/images/projects/poster card for fastDinner.png",
+      technologies: ["Adobe Illustrator", "Photoshop", "Brand Strategy"],
       githubUrl: null,
-      liveUrl: 'https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
+      liveUrl:
+        "https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       featured: true,
-      category: 'graphic'
+      category: "graphic",
     },
-     {
+    {
       id: 13,
-      title: 'Visit Ethiopia Graphic',
-      description: 'Welcome to Ethiopia, the Land of Origins! Ethiopia invites you to discover why it is the origin of so much!',
-       image: '/images/projects/poster card for fastDinner (1).png',
-      technologies: ['Canva', 'Brand Strategy'],
+      title: "Visit Ethiopia Graphic",
+      description:
+        "Welcome to Ethiopia, the Land of Origins! Ethiopia invites you to discover why it is the origin of so much!",
+      image: "/images/projects/poster card for fastDinner (1).png",
+      technologies: ["Canva", "Brand Strategy"],
       githubUrl: null,
-      liveUrl: 'https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
+      liveUrl:
+        "https://www.canva.com/design/DAGMs5-5YS8/1jS74x3LoAsF9eOuNTR7bA/edit?utm_content=DAGMs5-5YS8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       featured: true,
-      category: 'graphic'
+      category: "graphic",
     },
     {
       id: 8,
-      title: 'Marketing Campaign Graphics',
-      description: 'Series of marketing materials including social media graphics, banners, and promotional materials.',
-       image: '/images/projects/ZenCafe-poster.png',
-      technologies: ['Photoshop', 'Illustrator', 'Canva'],
+      title: "Marketing Campaign Graphics",
+      description:
+        "Series of marketing materials including social media graphics, banners, and promotional materials.",
+      image: "/images/projects/ZenCafe-poster.png",
+      technologies: ["Photoshop", "Illustrator", "Canva"],
       githubUrl: null,
-      liveUrl: 'https://behance.net/alexchen/marketing-campaign',
+      liveUrl: "https://behance.net/alexchen/marketing-campaign",
       featured: false,
-      category: 'graphic'
+      category: "graphic",
     },
     {
       id: 9,
-      title: 'Product Launch Video',
-      description: 'Corporate video for product launch including motion graphics, sound design, and professional editing.',
-       image: '/images/projects/ecommerce-platform.png',
-      technologies: ['Premiere Pro', 'After Effects', 'DaVinci Resolve'],
+      title: "Product Launch Video",
+      description:
+        "Corporate video for product launch including motion graphics, sound design, and professional editing.",
+      image: "/images/projects/ecommerce-platform.png",
+      technologies: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
       githubUrl: null,
-      liveUrl: 'https://vimeo.com/alexchen/product-launch',
+      liveUrl: "https://vimeo.com/alexchen/product-launch",
       featured: true,
-      category: 'video'
+      category: "video",
     },
     {
       id: 10,
-      title: 'Explainer Animation',
-      description: 'Animated explainer video for tech startup with character animation and dynamic transitions.',
-    image: '/images/projects/ecommerce-platform.png',
-      technologies: ['After Effects', 'Character Animator', 'Audition'],
+      title: "Explainer Animation",
+      description:
+        "Animated explainer video for tech startup with character animation and dynamic transitions.",
+      image: "/images/projects/ecommerce-platform.png",
+      technologies: ["After Effects", "Character Animator", "Audition"],
       githubUrl: null,
-      liveUrl: 'https://youtube.com/alexchen/explainer-video',
+      liveUrl: "https://youtube.com/alexchen/explainer-video",
       featured: false,
-      category: 'video'
+      category: "video",
     },
-       {
+    {
       id: 11,
-      title: 'Socialize - Social App',
-      description: 'A minimalisic social app for tech professionals to share their ideas and connect with each other.',
-      image: '/images/projects/social-app.png',
-      technologies: ['Flutter', 'Node.js', 'MongoDB', 'Google Maps API'],
-      githubUrl: 'https://github.com/alexchen/food-delivery',
-      liveUrl: 'https://play.google.com/food-delivery',
+      title: "Socialize - Social App",
+      description:
+        "A minimalisic social app for tech professionals to share their ideas and connect with each other.",
+      image: "/images/projects/social-app.png",
+      technologies: ["Flutter", "Node.js", "MongoDB", "Google Maps API"],
+      githubUrl: "https://github.com/alexchen/food-delivery",
+      liveUrl: "https://play.google.com/food-delivery",
       featured: false,
-      category: 'mobile'
+      category: "mobile",
     },
-       {
+    {
       id: 14,
       title: "Connect Guard",
-      description: 'A lightweight, robust Flutter package that simplifies handling offline/online network states.',
-      image: '/images/projects/connect_gaurd_img.png',
-      technologies: ['Flutter', 'rxdart', 'connectivity+',"100+ Downloads"],
-      githubUrl: 'https://github.com/tekle-eyesus/connect_guard',
-      liveUrl: 'https://pub.dev/packages/connect_guard',
+      description:
+        "A lightweight, robust Flutter package that simplifies handling offline/online network states.",
+      image: "/images/projects/connect_gaurd_img.png",
+      technologies: ["Flutter", "rxdart", "connectivity+", "100+ Downloads"],
+      githubUrl: "https://github.com/tekle-eyesus/connect_guard",
+      liveUrl: "https://pub.dev/packages/connect_guard",
       featured: true,
-      category: 'mobile'
+      category: "mobile",
     },
-     {
+    {
       id: 12,
-      title: 'ChatAI - Chatbot App',
-      description: 'A Chatbot app that helps users with their queries and questions with gemini ai.',
-      image: '/images/projects/chatbot-app.png',
-      technologies: ['Flutter', 'Gemini API Key'],
-      githubUrl: 'https://github.com/alexchen/food-delivery',
-      liveUrl: 'https://play.google.com/food-delivery',
+      title: "ChatAI - Chatbot App",
+      description:
+        "A Chatbot app that helps users with their queries and questions with gemini ai.",
+      image: "/images/projects/chatbot-app.png",
+      technologies: ["Flutter", "Gemini API Key"],
+      githubUrl: "https://github.com/alexchen/food-delivery",
+      liveUrl: "https://play.google.com/food-delivery",
       featured: false,
-      category: 'mobile'
+      category: "mobile",
     },
   ],
-  
+
   categories: [
     {
-      id: 'all',
-      name: 'All Projects',
-      count: 10
+      id: "all",
+      name: "All Projects",
+      count: 10,
     },
     {
-      id: 'featured',
-      name: 'Featured',
-      count: 6
+      id: "featured",
+      name: "Featured",
+      count: 6,
     },
     {
-      id: 'web',
-      name: 'Web Development',
-      count: 2
+      id: "web",
+      name: "Web Development",
+      count: 2,
     },
     {
-      id: 'mobile',
-      name: 'Mobile Apps',
-      count: 2
+      id: "mobile",
+      name: "Mobile Apps",
+      count: 2,
     },
     {
-      id: 'uiux',
-      name: 'UI/UX Design',
-      count: 2
+      id: "uiux",
+      name: "UI/UX Design",
+      count: 2,
     },
     {
-      id: 'graphic',
-      name: 'Graphic Design',
-      count: 2
+      id: "graphic",
+      name: "Graphic Design",
+      count: 2,
     },
     {
-      id: 'video',
-      name: 'Video Editing',
-      count: 2
-    }
-  ]
+      id: "video",
+      name: "Video Editing",
+      count: 2,
+    },
+  ],
 };
 
-
 export const getProjectsByCategory = (category) => {
-  if (category === 'all') return projects.all;
-  if (category === 'featured') return projects.all.filter(project => project.featured);
-  return projects.all.filter(project => project.category === category);
+  if (category === "all") return projects.all;
+  if (category === "featured")
+    return projects.all.filter((project) => project.featured);
+  return projects.all.filter((project) => project.category === category);
 };
 
 // Update category counts
-projects.categories.forEach(cat => {
+projects.categories.forEach((cat) => {
   cat.count = getProjectsByCategory(cat.id).length;
 });
