@@ -1,63 +1,93 @@
-import React from 'react';
-import { FaGithub, FaExternalLinkAlt, FaStar, FaMobile, FaPalette, FaVideo, FaLaptop } from 'react-icons/fa';
+import React from "react";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaStar,
+  FaMobile,
+  FaPalette,
+  FaVideo,
+  FaLaptop,
+} from "react-icons/fa";
 
 const ProjectCard = ({ project, category }) => {
   const getCategoryIcon = () => {
     switch (category) {
-      case 'mobile': return <FaMobile />;
-      case 'uiux': return <FaPalette />;
-      case 'graphic': return <FaPalette />;
-      case 'video': return <FaVideo />;
-      default: return <FaLaptop />;
+      case "mobile":
+        return <FaMobile />;
+      case "uiux":
+        return <FaPalette />;
+      case "graphic":
+        return <FaPalette />;
+      case "video":
+        return <FaVideo />;
+      default:
+        return <FaLaptop />;
     }
   };
 
   const getPlatformBadge = () => {
     switch (category) {
-      case 'mobile': return 'Mobile App';
-      case 'uiux': return 'UI/UX Design';
-      case 'graphic': return 'Graphic Design';
-      case 'video': return 'Video Editing';
-      default: return 'Web App';
+      case "mobile":
+        return "Mobile App";
+      case "uiux":
+        return "UI/UX Design";
+      case "graphic":
+        return "Graphic Design";
+      case "video":
+        return "Video Editing";
+      default:
+        return "Web App";
     }
   };
 
   return (
-    <div className={`project-card ${project.featured ? 'featured' : ''} category-${category}`}>
+    <div
+      className={`project-card ${project.featured ? "featured" : ""} category-${category}`}
+    >
       {project.featured && (
-        <div className="featured-badge">
+        <div className='featured-badge'>
           <FaStar />
           Featured
         </div>
       )}
-      
-      <div className="category-badge">
+
+      <div className='category-badge'>
         {getCategoryIcon()}
         {getPlatformBadge()}
       </div>
-      
-      <div className="project-image">
-        <img 
-          src={project.image} 
+
+      <div className='project-image'>
+        <img
+          src={project.image}
           alt={`${project.title} screenshot`}
-          className="project-screenshot"
+          className='project-screenshot'
           onError={(e) => {
-            e.target.style.display = 'none';
-            e.target.nextSibling.style.display = 'flex';
+            e.target.style.display = "none";
+            e.target.nextSibling.style.display = "flex";
           }}
         />
-        <div className="image-fallback">
+        <div className='image-fallback'>
           <span>Project Preview</span>
         </div>
-        <div className="project-overlay">
-          <div className="project-links">
+        <div className='project-overlay'>
+          <div className='project-links'>
             {project.githubUrl && (
-              <a href={project.githubUrl} aria-label="GitHub Repository" className="project-link" target="_blank">
+              <a
+                href={project.githubUrl}
+                aria-label='GitHub Repository'
+                className='project-link'
+                target='_blank'
+              >
                 <FaGithub />
               </a>
             )}
             {project.liveUrl && (
-              <a href={project.liveUrl} aria-label="Live Demo" className="project-link" target="_blank">
+              <a
+                href={project.liveUrl}
+                aria-label='Live Demo'
+                className='project-link'
+                target='_blank'
+              >
                 <FaExternalLinkAlt />
               </a>
             )}
@@ -65,24 +95,34 @@ const ProjectCard = ({ project, category }) => {
         </div>
       </div>
 
-      <div className="project-content">
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-description">{project.description}</p>
-        
-        <div className="project-technologies">
-          {project.technologies.map(tech => (
-            <span key={tech} className="tech-tag">{tech}</span>
+      <div className='project-content'>
+        <h3 className='project-title'>{project.title}</h3>
+        <p className='project-description'>{project.description}</p>
+
+        <div className='project-technologies'>
+          {project.technologies.map((tech) => (
+            <span key={tech} className='tech-tag'>
+              {tech}
+            </span>
           ))}
         </div>
 
-        <div className="project-actions">
+        <div className='project-actions'>
           {project.liveUrl && (
-            <a href={project.liveUrl} className="btn btn-small btn-view" target="_blank">
+            <a
+              href={project.liveUrl}
+              className='btn btn-small btn-view'
+              target='_blank'
+            >
               View Project
             </a>
           )}
           {project.githubUrl && (
-            <a href={project.githubUrl} className="btn btn-small btn-code" target="_blank">
+            <a
+              href={project.githubUrl}
+              className='btn btn-small btn-code'
+              target='_blank'
+            >
               Source Code
             </a>
           )}
@@ -211,7 +251,6 @@ const ProjectCard = ({ project, category }) => {
         }
 
         .project-link:hover {
-          transform: scale(1.1);
           background: var(--primary-bg);
           color: var(--accent);
           border-color: var(--accent);
@@ -306,17 +345,17 @@ const ProjectCard = ({ project, category }) => {
           .project-content {
             padding: 1.25rem;
           }
-          
+
           .project-image {
             height: 180px;
           }
-          
+
           .featured-badge,
           .category-badge {
             font-size: 0.7rem;
             padding: 0.4rem 0.8rem;
           }
-          
+
           .project-link {
             width: 45px;
             height: 45px;
@@ -328,11 +367,11 @@ const ProjectCard = ({ project, category }) => {
           .project-actions {
             flex-direction: column;
           }
-          
+
           .project-content {
             padding: 1rem;
           }
-          
+
           .project-title {
             font-size: 1.1rem;
           }
