@@ -6,7 +6,7 @@ const About = () => {
 
   const handleDirectDownload = () => {
     const directDownloadLink = `https://drive.google.com/uc?export=download&id=${getFileIdFromLink(
-      resumeDriveLink
+      resumeDriveLink,
     )}`;
     const link = document.createElement("a");
     link.href = directDownloadLink;
@@ -36,17 +36,17 @@ const About = () => {
           <div className='about-text'>
             <h3>Building Digital Solutions That Make a Difference</h3>
             <p>
-              I'm a passionate software engineer with 4+ years of experience
-              specializing in front-end web, mobile app, and AI-driven
-              solutions. I love building efficient, scalable, and user-friendly
-              applications that solve real-world problems and enhance everyday
-              experiences through intelligent, intuitive design.
+              Hey, I'm Tekleeyesus, a full stack developer who loves building
+              clean, modern websites and apps where design, functionality, and
+              even the smallest details matter; with a focus on creating
+              products that are both practical and visually satisfying.
             </p>
             <p>
-              My journey in tech started with a curiosity about how things work,
-              and it has evolved into a career dedicated to crafting exceptional
-              digital experiences. I believe in writing clean, maintainable code
-              and staying updated with the latest industry trends.
+              Tech stack isn't my concern. I'm flexible with whatever the
+              project needs, though, I specialize in and prefer modern
+              frameworks and tools such as Flutter, the MERN stack, and
+              integrating AI where it adds the most value. I’m always open to
+              new opportunities to learn, grow, and build impactful solutions.
             </p>
             <div className='about-highlights'>
               <div className='highlight-item'>
