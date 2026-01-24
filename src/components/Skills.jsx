@@ -21,28 +21,28 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 90, icon: <FaReact /> },
-        { name: "JavaScript", level: 95, icon: <FaJs /> },
-        { name: "TypeScript", level: 85, icon: <SiTypescript /> },
-        { name: "Flutter", level: 85, icon: <SiFlutter /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "JavaScript", icon: <FaJs /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "Flutter", icon: <SiFlutter /> },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 88, icon: <FaNode /> },
-        { name: "Python", level: 85, icon: <FaPython /> },
-        { name: "PostgreSQL", level: 80, icon: <SiPostgresql /> },
-        { name: "MongoDB", level: 75, icon: <SiMongodb /> },
+        { name: "Node.js", icon: <FaNode /> },
+        { name: "Python", icon: <FaPython /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "MongoDB", icon: <SiMongodb /> },
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Git", level: 90, icon: <FaGitAlt /> },
-        { name: "Docker", level: 75, icon: <SiDocker /> },
-        { name: "AWS", level: 70, icon: <FaAws /> },
-        { name: "Kubernetes", level: 65, icon: <SiKubernetes /> },
+        { name: "Git", icon: <FaGitAlt /> },
+        { name: "Docker", icon: <SiDocker /> },
+        { name: "AWS", icon: <FaAws /> },
+        { name: "Kubernetes", icon: <SiKubernetes /> },
       ],
     },
   ];
@@ -63,13 +63,6 @@ const Skills = () => {
                         <span className='skill-icon'>{skill.icon}</span>
                         <span className='skill-name'>{skill.name}</span>
                       </div>
-                      <span className='skill-percentage'>{skill.level}%</span>
-                    </div>
-                    <div className='skill-bar'>
-                      <div
-                        className='skill-progress'
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
                     </div>
                   </div>
                 ))}
@@ -117,9 +110,9 @@ const Skills = () => {
 
         .skill-header {
           display: flex;
-          justify-content: between;
+          justify-content: flex-start;
           align-items: center;
-          margin-bottom: 0.5rem;
+          gap: 0.5rem;
         }
 
         .skill-info {
@@ -137,52 +130,6 @@ const Skills = () => {
         .skill-name {
           font-weight: 600;
           color: var(--text-primary);
-        }
-
-        .skill-percentage {
-          font-size: 0.9rem;
-          color: var(--text-secondary);
-          font-weight: 600;
-        }
-
-        .skill-bar {
-          height: 6px;
-          background: var(--secondary-bg);
-          border-radius: 3px;
-          overflow: hidden;
-        }
-
-        .skill-progress {
-          height: 100%;
-          background: var(--accent);
-          border-radius: 3px;
-          transition: width 1s ease-in-out;
-          position: relative;
-        }
-
-        .skill-progress::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent
-          );
-          animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
         }
 
         @media (max-width: 768px) {
