@@ -104,6 +104,25 @@ export const projects = {
       category: "web",
     },
     {
+      id: 21,
+      title: "MedScan AI",
+      description:
+        "Medical AI assistant for Pneumonia detection featuring explainable heatmaps (Grad-CAM), Amharic localization, and secure edge inference.",
+      image: "/images/projects/mediscan.png",
+      technologies: [
+        "Python",
+        "PyTorch",
+        "Grad-CAM",
+        "Flutter",
+        "OpenCV",
+        "sqlite",
+      ],
+      githubUrl: "https://github.com/tekle-eyesus/MediScan",
+      liveUrl: "https://youtu.be/4WuUqCWwjPg?si=7ol8nbQOaYXEJGUo",
+      featured: false,
+      category: "mobile",
+    },
+    {
       id: 3,
       title: "FindBet - House Rental App",
       description:
