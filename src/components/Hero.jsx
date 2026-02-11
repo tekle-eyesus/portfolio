@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
+import Carousel from "../component/Carousel.jsx";
 const Hero = () => {
   return (
     <section id='home' className='hero'>
@@ -40,26 +40,14 @@ const Hero = () => {
             </div>
           </div>
           <div className='hero-visual'>
-            <div className='code-animation'>
-              <div className='code-line'>function myPortfolio() {"{"}</div>
-              <div className='code-line'>
-                &nbsp;&nbsp;return {"<"}
-                <span className='code-tag'>AwesomeProjects</span>
-                {">"}
-              </div>
-              <div className='code-line'>
-                &nbsp;&nbsp;&nbsp;&nbsp;{"<"}Innovation /{">"}
-              </div>
-              <div className='code-line'>
-                &nbsp;&nbsp;&nbsp;&nbsp;{"<"}Creativity /{">"}
-              </div>
-              <div className='code-line'>
-                &nbsp;&nbsp;{"<"}/
-                <span className='code-tag'>AwesomeProjects</span>
-                {">"}
-              </div>
-              <div className='code-line'>{"}"}</div>
-            </div>
+            <Carousel
+              baseWidth={290}
+              autoplay={false}
+              autoplayDelay={3000}
+              pauseOnHover={false}
+              loop={false}
+              round={false}
+            />
           </div>
         </div>
       </div>
