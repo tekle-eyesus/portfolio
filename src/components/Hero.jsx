@@ -43,7 +43,7 @@ const Hero = () => {
             <Carousel
               baseWidth={290}
               autoplay={true}
-              autoplayDelay={6000}
+              autoplayDelay={8000}
               pauseOnHover={true}
               loop={true}
               round={false}
@@ -134,6 +134,7 @@ const Hero = () => {
         .hero-visual {
           display: flex;
           justify-content: center;
+          margin-bottom: 1.5rem;
         }
 
         .code-animation {
