@@ -42,10 +42,10 @@ const Hero = () => {
           <div className='hero-visual'>
             <Carousel
               baseWidth={290}
-              autoplay={false}
-              autoplayDelay={3000}
-              pauseOnHover={false}
-              loop={false}
+              autoplay={true}
+              autoplayDelay={6000}
+              pauseOnHover={true}
+              loop={true}
               round={false}
             />
           </div>
