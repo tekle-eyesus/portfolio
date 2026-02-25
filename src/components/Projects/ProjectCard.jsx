@@ -69,30 +69,30 @@ const ProjectCard = ({ project, category }) => {
         <div className='image-fallback'>
           <span>Project Preview</span>
         </div>
-        <div className='project-overlay'>
-          <div className='project-links'>
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                aria-label='GitHub Repository'
-                className='project-link'
-                target='_blank'
-              >
-                <FaGithub />
-              </a>
-            )}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                aria-label='Live Demo'
-                className='project-link'
-                target='_blank'
-              >
-                <FaExternalLinkAlt />
-              </a>
-            )}
-          </div>
+        {/* <div className='project-overlay'> */}
+        <div className='project-links'>
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              aria-label='GitHub Repository'
+              className='project-link'
+              target='_blank'
+            >
+              <FaGithub />
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              aria-label='Live Demo'
+              className='project-link'
+              target='_blank'
+            >
+              <FaExternalLinkAlt />
+            </a>
+          )}
         </div>
+        {/* </div> */}
       </div>
 
       <div className='project-content'>
@@ -198,10 +198,6 @@ const ProjectCard = ({ project, category }) => {
           transition: transform 0.3s ease;
         }
 
-        .project-card:hover .project-screenshot {
-          transform: scale(1.05);
-        }
-
         .image-fallback {
           width: 100%;
           height: 100%;
@@ -213,47 +209,26 @@ const ProjectCard = ({ project, category }) => {
           font-style: italic;
         }
 
-        .project-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover .project-overlay {
-          opacity: 0.7;
-        }
-
         .project-links {
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
           display: flex;
-          gap: 1rem;
+          gap: 0.3rem;
         }
 
         .project-link {
           color: var(--primary-bg);
           font-size: 0.8rem;
-          width: 30px;
-          height: 30px;
+          width: 25px;
+          height: 25px;
           display: flex;
           align-items: center;
           justify-content: center;
           background: var(--accent);
           border-radius: 50%;
           transition: all 0.3s ease;
-          border: 2px solid var(--primary-bg);
-        }
-
-        .project-link:hover {
-          background: var(--primary-bg);
-          color: var(--accent);
-          border-color: var(--accent);
+          border: 1.3px solid var(--accent);
         }
 
         .project-content {
@@ -317,20 +292,10 @@ const ProjectCard = ({ project, category }) => {
           border: 1px solid var(--accent);
         }
 
-        .btn-view:hover {
-          background: transparent;
-          color: var(--accent);
-        }
-
         .btn-code {
           background: transparent;
           color: var(--accent);
           border: 1px solid var(--accent);
-        }
-
-        .btn-code:hover {
-          background: var(--accent);
-          color: var(--primary-bg);
         }
 
         /* Remove category-specific gradient backgrounds */

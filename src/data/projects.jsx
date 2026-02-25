@@ -5,10 +5,10 @@ export const projects = {
       title: "AI Tech Blogging Platform API",
       description:
         "A comprehensive blogging platform API built with Node.js and Express, featuring user authentication, posts, threaded comments and replies, likes, and intelligent tech hub integration.",
-      image: "/images/projects/even_platformimg.png",
+      image: "/images/projects/even-blog.png",
       technologies: ["React", "Node.js", "MongoDB", "MVP", "JWT"],
       githubUrl: "https://github.com/tekle-eyesus/even-platform",
-      liveUrl: "https://documenter.getpostman.com/view/37569986/2sBXVZpEmL",
+      liveUrl: "https://even-blog.vercel.app/about",
       featured: true,
       category: "web",
     },
