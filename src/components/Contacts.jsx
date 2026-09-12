@@ -377,17 +377,74 @@ const Contact = () => {
         }
 
         @media (max-width: 480px) {
-          .contact-form {
-            padding: 1.5rem;
+          .contact-info {
+            text-align: left;
+          }
+
+          .contact-details {
+            gap: 0.85rem;
+            margin-bottom: 1.5rem;
           }
 
           .contact-item {
-            padding: 0.75rem;
+            display: grid;
+            grid-template-columns: 2.25rem 1fr;
+            align-items: start;
+            gap: 0.85rem;
+            padding: 0.95rem 1rem;
+            border-radius: 14px;
+          }
+
+          .contact-item:hover {
+            transform: none;
+          }
+
+          .contact-item svg {
+            font-size: 1rem;
+            color: var(--accent);
+            background: rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.6rem;
+            width: 2.25rem;
+            height: 2.25rem;
+          }
+
+          .contact-item div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 0;
+            text-align: left;
+          }
+
+          .contact-item strong {
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1.2;
+          }
+
+          .contact-item span {
+            font-size: 0.9rem;
+            line-height: 1.45;
+            word-break: break-word;
+          }
+
+          .social-links {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+          }
+
+          .contact-form {
+            padding: 1.25rem;
+            border-radius: 14px;
           }
 
           .form-group input,
           .form-group textarea {
-            padding: 0.75rem;
+            padding: 0.85rem;
           }
         }
       `}</style>
