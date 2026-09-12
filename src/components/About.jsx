@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   const resumeDriveLink =
-    "https://drive.google.com/file/d/1j5509OpNwS-1hdO7zbwvRETLqUESOFyn/view?usp=sharing";
+    "https://drive.google.com/file/d/1Q6We_XD2f077l2u8GqW1hqzW4GXsPRp8/view?usp=sharing";
 
   const handleDirectDownload = () => {
     const directDownloadLink = `https://drive.google.com/uc?export=download&id=${getFileIdFromLink(
@@ -10,7 +10,7 @@ const About = () => {
     )}`;
     const link = document.createElement("a");
     link.href = directDownloadLink;
-    link.setAttribute("download", "Alex_Chen_Resume.pdf");
+    link.setAttribute("download", "Tekleeyesus_Munye_Resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -28,8 +28,8 @@ const About = () => {
         <div className='about-content'>
           <div className='about-image'>
             <img
-              src='/images/profile_photo.png'
-              alt='Professional Headshot of Alex Chen'
+              src='/images/profile_photo.jpg'
+              alt='Professional Headshot of Me'
               className='profile-photo'
             />
           </div>
