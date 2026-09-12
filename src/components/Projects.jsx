@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { projects, getProjectsByCategory } from '../data/projects';
-import ProjectCard from './Projects/ProjectCard';
-import UICard from './Projects/UICard';
+import React, { useState } from "react";
+import { projects, getProjectsByCategory } from "../data/projects";
+import ProjectCard from "./Projects/ProjectCard";
+import UICard from "./Projects/UICard";
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState("all");
   const [isLoading, setIsLoading] = useState(false);
 
   const filteredProjects = getProjectsByCategory(activeCategory);
@@ -12,7 +12,7 @@ const Projects = () => {
   const handleCategoryChange = (categoryId) => {
     setIsLoading(true);
     setActiveCategory(categoryId);
-    
+
     // Simulate loading for better UX
     setTimeout(() => {
       setIsLoading(false);
@@ -21,56 +21,56 @@ const Projects = () => {
 
   const renderProjectCard = (project) => {
     // Use specialized cards for design categories
-    if (project.category === 'uiux') {
+    if (project.category === "uiux") {
       return <UICard key={project.id} project={project} />;
     }
-    
+
     return (
-      <ProjectCard 
-        key={project.id} 
-        project={project} 
+      <ProjectCard
+        key={project.id}
+        project={project}
         category={project.category}
       />
     );
   };
 
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <h2 className="section-title">My Projects</h2>
-        <p className="section-subtitle">
+    <section id='projects' className='section'>
+      <div className='container'>
+        <h2 className='section-title'>My Projects</h2>
+        <p className='section-subtitle'>
           Explore my work across different domains and technologies
         </p>
-        
+
         {/* Category Tabs */}
-        <div className="category-tabs">
+        <div className='category-tabs'>
           {projects.categories.map((category) => (
             <button
               key={category.id}
-              className={`category-tab ${activeCategory === category.id ? 'active' : ''} ${
-                category.count === 0 ? 'disabled' : ''
+              className={`category-tab ${activeCategory === category.id ? "active" : ""} ${
+                category.count === 0 ? "disabled" : ""
               }`}
               onClick={() => handleCategoryChange(category.id)}
               disabled={category.count === 0}
             >
-              <span className="tab-name">{category.name}</span>
-              <span className="tab-count">{category.count}</span>
+              <span className='tab-name'>{category.name}</span>
+              <span className='tab-count'>{category.count}</span>
             </button>
           ))}
         </div>
 
         {/* Projects Grid */}
-        <div className="projects-section">
+        <div className='projects-section'>
           {isLoading ? (
-            <div className="loading-grid">
+            <div className='loading-grid'>
               {[1, 2, 3, 4].map((item) => (
-                <div key={item} className="project-skeleton">
-                  <div className="skeleton-image"></div>
-                  <div className="skeleton-content">
-                    <div className="skeleton-title"></div>
-                    <div className="skeleton-text"></div>
-                    <div className="skeleton-tags"></div>
-                    <div className="skeleton-buttons"></div>
+                <div key={item} className='project-skeleton'>
+                  <div className='skeleton-image'></div>
+                  <div className='skeleton-content'>
+                    <div className='skeleton-title'></div>
+                    <div className='skeleton-text'></div>
+                    <div className='skeleton-tags'></div>
+                    <div className='skeleton-buttons'></div>
                   </div>
                 </div>
               ))}
@@ -78,12 +78,12 @@ const Projects = () => {
           ) : (
             <>
               {filteredProjects.length > 0 ? (
-                <div className="projects-grid">
+                <div className='projects-grid'>
                   {filteredProjects.map(renderProjectCard)}
                 </div>
               ) : (
-                <div className="empty-state">
-                  <div className="empty-icon">📁</div>
+                <div className='empty-state'>
+                  <div className='empty-icon'>📁</div>
                   <h3>No projects found</h3>
                   <p>There are no projects in this category yet.</p>
                 </div>
@@ -106,7 +106,7 @@ const Projects = () => {
         }
 
         .section-title::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: -10px;
           left: 50%;
@@ -152,13 +152,18 @@ const Projects = () => {
         }
 
         .category-tab::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
           transition: left 0.5s;
         }
 
@@ -266,7 +271,7 @@ const Projects = () => {
         }
 
         .skeleton-tags::before {
-          content: '';
+          content: "";
           height: 1.5rem;
           background: var(--secondary-bg);
           border-radius: 12px;
@@ -280,7 +285,7 @@ const Projects = () => {
         }
 
         .skeleton-buttons::before {
-          content: '';
+          content: "";
           height: 2.5rem;
           background: var(--secondary-bg);
           border-radius: 8px;
@@ -305,20 +310,42 @@ const Projects = () => {
         }
 
         @keyframes pulse {
-          0% { opacity: 1; }
-          50% { opacity: 0.7; }
-          100% { opacity: 1; }
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.7;
+          }
+          100% {
+            opacity: 1;
+          }
         }
 
         @media (max-width: 768px) {
           .category-tabs {
-            gap: 0.25rem;
-            padding: 0;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            padding: 0 1rem 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .category-tabs::-webkit-scrollbar {
+            display: none;
           }
 
           .category-tab {
-            padding: 0.6rem 1rem;
+            flex: 0 0 auto;
+            padding: 0.7rem 1rem;
             font-size: 0.8rem;
+            border-radius: 999px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
           }
 
           .tab-name {
@@ -343,14 +370,20 @@ const Projects = () => {
 
         @media (max-width: 480px) {
           .category-tabs {
-                flex-direction: column;
-            align-items: center;
+            padding-inline: 0.75rem;
           }
 
           .category-tab {
-            width: 100%;
-            max-width: 200px;
-            justify-content: center;
+            padding: 0.65rem 0.9rem;
+          }
+
+          .tab-name {
+            font-size: 0.75rem;
+          }
+
+          .tab-count {
+            padding: 0.18rem 0.45rem;
+            font-size: 0.7rem;
           }
 
           .projects-grid {
